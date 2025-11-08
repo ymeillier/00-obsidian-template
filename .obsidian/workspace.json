@@ -18,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "README.md",
+                    "file": "Template.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "README"
+                  "title": "Template"
                 }
               }
             ]
@@ -235,7 +235,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "474dfe56ec031fb9",
+  "active": "16cf5e627f9f7343",
   "lastOpenFiles": [
     "Template.md",
     "README.md",

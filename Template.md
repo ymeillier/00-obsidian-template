@@ -1,21 +1,3 @@
----
-jupyter:
-  jupytext:
-    cell_metadata_filter: -all
-    formats: ipynb,md
-    kernelspec:
-      display_name: Template Project VEnv
-      name: template_venv
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.18.1
-  kernelspec:
-    display_name: Python 3 (ipykernel)
-    language: python
-    name: python3
----
 
 
 This repository contains the .obsidian config directory that is used a our reference obsidian configurations and plugins when creating a new vault with the `obsidian` or `obsidian_tmp` commands.
