@@ -25,7 +25,36 @@ See [https://github.com/ymeillier/043-obsidian-setup/blob/main/README.md](https:
 Template.md explains configurations and plugins configured on our template vault. 
 
 
-# Plugins List
+# Plugins
+## Colored Text
+Allows you to change the color of text within your notes, which is useful for highlighting and organizing information visually.
+
+## Custom Attachment Location
+Gives you control over where new attachments (like images) are saved, using rules to automatically place them in specific folders.
+
+## Excalidraw
+Integrates the Excalidraw whiteboarding tool, allowing you to create and embed editable sketches, diagrams, and handwritten notes.
+
+## Dataview
+A powerful tool that lets you query, list, and table data from your notes based on metadata like tags and frontmatter fields.
+
+## Editing toolbar
+Adds a customizable toolbar to the editor with buttons for common formatting actions like bold, italics, lists, and headings.
+
+## Image Toolkit
+Improves the handling of images by adding features like a full-screen viewer, zoom, rotation, and easy copying.
+
+## JupyMD
+Enables you to run Jupyter Notebook code blocks (primarily Python) directly within your notes and see the rendered output.
+
+## Omnisearch
+A powerful search tool that provides more advanced search capabilities, including fuzzy matching and searching inside attachments like PDFs.
+
+## Quiet Outline 
+Offers a cleaner, more customizable outline view of your document's headings.
+
+## Terminal
+Embeds a command-line terminal directly into Obsidian, allowing you to run shell commands without leaving the application.
 
 ## 
 # Jupyter/Colab from Obsidian
