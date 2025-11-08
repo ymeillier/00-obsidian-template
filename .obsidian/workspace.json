@@ -18,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Template.md",
+                    "file": "README.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "Template"
+                  "title": "README"
                 }
               }
             ]
@@ -219,7 +219,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -235,20 +236,38 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "474dfe56ec031fb9",
+  "active": "16cf5e627f9f7343",
   "lastOpenFiles": [
     "README.md",
+    "assets/README/file-20251031161647806.png",
+    "assets/README/file-20251031173745795.png",
+    "assets/README/file-20251031173343313.png",
+    "assets/README/file-20251101110359833.png",
+    "assets/README/file-20251031173706641.png",
+    "assets/README/file-20251031160555170.png",
+    "assets/README/file-20251031173546140.png",
+    "assets/README/file-20251101121137560.png",
+    "assets/README/file-20251101121111473.png",
+    "assets/README/file-20251101110747436.png",
+    "assets/README",
     "Template.md",
-    "assets/Template/file-20251107155838544.png",
-    "assets/Template/file-20251107151106124.png",
-    "assets/Template/file-20251107150342627.png",
-    "assets/Template/file-20251107145845247.png",
-    "assets/Template/file-20251107145520884.png",
-    "assets/Template/file-20251107145156085.png",
-    "assets/Template/file-20251107145036252.png",
-    "assets/Template/file-20251107144954610.png",
-    "assets/Template/file-20251107143805524.png",
-    "assets/Template/file-20251107142559881.png",
+    "scripts/zshrc-addons.md",
+    "scripts/tab-complete.md",
+    "scripts/obsidian_vaults().md",
+    "scripts/obsidian_tmp().md",
+    "scripts/obsidian_cleanup_pwd().md",
+    "scripts/obsidian_cleanup_id().md",
+    "scripts/obsidian_cleanup_alltmp().md",
+    "scripts/obsidian().md",
+    "scripts",
+    "zshrc-addons.md",
+    "obsidian().md",
+    "obsidian_tmp().md",
+    "obsidian_cleanup_alltmp().md",
+    "tab-complete.md",
+    "obsidian_cleanup_pwd().md",
+    "obsidian_cleanup_id().md",
+    "obsidian_vaults().md",
     "Template.ipynb",
     "template/bin/jupyter-notebook",
     "template/share/jupyter/labextensions/@jupyter-notebook/lab-extension/schemas/@jupyter-notebook/lab-extension/launch-tree.json",
@@ -257,23 +276,12 @@
     "template/share/jupyter/labextensions/@jupyter-notebook/lab-extension/schemas/@jupyter-notebook/lab-extension",
     "template/share/jupyter/labextensions/@jupyter-notebook/lab-extension/static/third-party-licenses.json",
     "template/share/jupyter/labextensions/@jupyter-notebook/lab-extension/static/style.js",
-    "template/share/jupyter/labextensions/@jupyter-notebook/lab-extension/static/remoteEntry.7b426e34c9bd9f45e6dc.js",
-    "template/share/jupyter/labextensions/@jupyter-notebook/lab-extension/static/93.eae3497dd223d842d198.js",
     "template/lib/python3.12/site-packages/numpy/random/LICENSE.md",
     "template/lib/python3.12/site-packages/jupyter_server/i18n/README.md",
     "template/lib/python3.12/site-packages/nbconvert/templates/skeleton/README.md",
     "template/lib/python3.12/site-packages/nbconvert/templates/README.md",
     "template/lib/python3.12/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.md",
     "template/lib/python3.12/site-packages/mdit_py_plugins/texmath/README.md",
-    "template/lib/python3.12/site-packages/mdit_py_plugins/container/README.md",
-    "template/lib/python3.12/site-packages/mdit_py_plugins/deflist/README.md",
-    "template/lib/python3.12/site-packages/httpcore-1.0.9.dist-info/licenses/LICENSE.md",
-    "template/lib/python3.12/site-packages/debugpy/_vendored/pydevd/pydevd_plugins/extensions/README.md",
-    "template/lib/python3.12/site-packages/idna-3.11.dist-info/licenses/LICENSE.md",
-    "template/lib/python3.12/site-packages/pyzmq-27.1.0.dist-info/licenses/LICENSE.md",
-    "template/lib/python3.12/site-packages/zmq/backend/cffi/README.md",
-    "template/lib/python3.12/site-packages/soupsieve-2.8.dist-info/licenses/LICENSE.md",
-    "assets/README.md",
-    "GDC-Lab-Guide/LabGuide.md"
+    "template/lib/python3.12/site-packages/mdit_py_plugins/container/README.md"
   ]
 }
