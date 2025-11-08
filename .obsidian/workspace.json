@@ -219,8 +219,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -236,8 +235,9 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "16cf5e627f9f7343",
+  "active": "474dfe56ec031fb9",
   "lastOpenFiles": [
+    "Template.md",
     "README.md",
     "assets/README/file-20251031161647806.png",
     "assets/README/file-20251031173745795.png",
@@ -250,7 +250,6 @@
     "assets/README/file-20251101121111473.png",
     "assets/README/file-20251101110747436.png",
     "assets/README",
-    "Template.md",
     "scripts/zshrc-addons.md",
     "scripts/tab-complete.md",
     "scripts/obsidian_vaults().md",
