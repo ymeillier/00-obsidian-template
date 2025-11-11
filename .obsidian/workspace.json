@@ -4,13 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "5423d894f1613bff",
+        "id": "3f38ea9ecf76671a",
         "type": "split",
         "children": [
           {
             "id": "5a2b8e5f4f863d2d",
             "type": "tabs",
-            "dimension": 73.63957597173145,
             "children": [
               {
                 "id": "474dfe56ec031fb9",
@@ -18,23 +17,22 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "repo-git.md",
-                    "mode": "source",
-                    "source": false
+                    "file": "Template.md",
+                    "mode": "preview",
+                    "source": true
                   },
                   "icon": "lucide-file",
-                  "title": "repo-git"
+                  "title": "Template"
                 }
               }
             ]
           },
           {
-            "id": "2920a072a32409d2",
+            "id": "3c7a1d62cafaea9a",
             "type": "tabs",
-            "dimension": 26.360424028268554,
             "children": [
               {
-                "id": "16cf5e627f9f7343",
+                "id": "0d04d4090473072b",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -235,11 +233,13 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "474dfe56ec031fb9",
+  "active": "0d04d4090473072b",
   "lastOpenFiles": [
-    "repo-git.md",
     "Template.md",
+    "assets/Template/file-20251111150922923.png",
     "README.md",
+    "repos.md",
+    "repo-git.md",
     "assets/README/file-20251031161647806.png",
     "assets/README/file-20251031173745795.png",
     "assets/README/file-20251031173343313.png",
@@ -249,7 +249,6 @@
     "assets/README/file-20251031173546140.png",
     "assets/README/file-20251101121137560.png",
     "assets/README/file-20251101121111473.png",
-    "assets/README/file-20251101110747436.png",
     "assets/README",
     "scripts/zshrc-addons.md",
     "scripts/tab-complete.md",
@@ -280,8 +279,6 @@
     "template/lib/python3.12/site-packages/jupyter_server/i18n/README.md",
     "template/lib/python3.12/site-packages/nbconvert/templates/skeleton/README.md",
     "template/lib/python3.12/site-packages/nbconvert/templates/README.md",
-    "template/lib/python3.12/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.md",
-    "template/lib/python3.12/site-packages/mdit_py_plugins/texmath/README.md",
-    "template/lib/python3.12/site-packages/mdit_py_plugins/container/README.md"
+    "template/lib/python3.12/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.md"
   ]
 }

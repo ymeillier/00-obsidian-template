@@ -8,5 +8,6 @@
   "dataview",
   "obsidian-excalidraw-plugin",
   "editing-toolbar",
-  "jupymd"
+  "jupymd",
+  "execute-code"
 ]

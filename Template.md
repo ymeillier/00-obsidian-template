@@ -6,6 +6,11 @@ See [https://github.com/ymeillier/043-obsidian-setup/blob/main/README.md](https:
 
 Template.md explains configurations and plugins configured on our template vault. 
 
+# Themes
+
+![file-20251111150922923](./assets/Template/file-20251111150922923.png)
+
+
 
 # Scripts
 
@@ -495,11 +500,18 @@ Offers a cleaner, more customizable outline view of your document's headings.
 ## Terminal
 Embeds a command-line terminal directly into Obsidian, allowing you to run shell commands without leaving the application.
 
-## 
+## Code emitter
 # Custom Attachment Location
 Its configurations are set as such to match my intended behavior of storing files in a specific asset folder and subfolder named after the md file
 ![](./assets/README/file-20251101110747436.png)
 
+
+
+# Code Emitter
+
+```Python
+!gcloud auth list
+```
 
 
 # Jupyter/Colab from Obsidian
