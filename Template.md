@@ -470,6 +470,7 @@ Glow is a clin based markdown reader that can be used as an alternative to Obsid
 
 
 # Plugins List
+
 ## Colored Text
 Allows you to change the color of text within your notes, which is useful for highlighting and organizing information visually.
 
@@ -501,6 +502,9 @@ Offers a cleaner, more customizable outline view of your document's headings.
 Embeds a command-line terminal directly into Obsidian, allowing you to run shell commands without leaving the application.
 
 ## Code emitter
+
+## xmind linker
+
 # Custom Attachment Location
 Its configurations are set as such to match my intended behavior of storing files in a specific asset folder and subfolder named after the md file
 ![](./assets/README/file-20251101110747436.png)

@@ -41,16 +41,51 @@ if you want to view the source, please visit the github repository of this plugi
   function extractDefault(module2) {
     return module2 && module2.__esModule && "default" in module2 ? module2.default : module2;
   }
+  const OBSIDIAN_BUILT_IN_MODULE_NAMES = [
+    "obsidian",
+    "@codemirror/autocomplete",
+    "@codemirror/collab",
+    "@codemirror/commands",
+    "@codemirror/language",
+    "@codemirror/lint",
+    "@codemirror/search",
+    "@codemirror/state",
+    "@codemirror/text",
+    "@codemirror/view",
+    "@lezer/common",
+    "@lezer/lr",
+    "@lezer/highlight"
+  ];
+  const DEPRECATED_OBSIDIAN_BUILT_IN_MODULE_NAMES = [
+    "@codemirror/closebrackets",
+    "@codemirror/comment",
+    "@codemirror/fold",
+    "@codemirror/gutter",
+    "@codemirror/highlight",
+    "@codemirror/history",
+    "@codemirror/matchbrackets",
+    "@codemirror/panel",
+    "@codemirror/rangeset",
+    "@codemirror/rectangular-selection",
+    "@codemirror/stream-parser",
+    "@codemirror/tooltip"
+  ];
   function requirePatched(id) {
-    const module2 = originalRequire?.(id);
-    if (module2) {
-      return extractDefault(module2);
+    if (OBSIDIAN_BUILT_IN_MODULE_NAMES.includes(id) || DEPRECATED_OBSIDIAN_BUILT_IN_MODULE_NAMES.includes(id)) {
+      return originalRequire?.(id);
     }
-    if (id === "process" || id === "node:process") {
-      console.error(`Module not found: ${id}. Fake process object is returned instead.`);
-      return globalThis.process;
+    if (globalThis?.app?.isMobile) {
+      if (id === "process" || id === "node:process") {
+        console.debug(`The most likely you can safely ignore this error. Module not found: ${id}. Fake process object is returned instead.`);
+        return globalThis.process;
+      }
+    } else {
+      const module2 = originalRequire?.(id);
+      if (module2) {
+        return extractDefault(module2);
+      }
     }
-    console.error(`Module not found: ${id}. Empty object is returned instead.`);
+    console.debug(`The most likely you can safely ignore this error. Module not found: ${id}. Empty object is returned instead.`);
     return {};
   }
 })();
@@ -71,7 +106,7 @@ ${Vd("Caused by:")}`;for(let a of n)a.trim()&&(e+=a.startsWith($d)?`
 ${a}`:`
 ${Vd(a)}`)}return e}i(yi,"errorToString");function rt(t=0){return(new Error().stack??"").split(`
 `).slice(t+2).join(`
-`)}i(rt,"getStackTrace");function fn(t,e){e??=globalThis.console,e.error(yi(t))}i(fn,"printError");function Wd(t){let e=fi.on(sl,t);return()=>{fi.offref(e)}}i(Wd,"registerAsyncErrorEventHandler");function Yn(t){throw t}i(Yn,"throwExpression");function Vd(t){return`${$d} --- ${t} --- (0)`}i(Vd,"generateStackTraceLine");function FA(t){fn(t)}i(FA,"handleAsyncError");i((function(){if(globalThis.process)return;let e={browser:!0,cwd(){return"/"},env:{},platform:"android"};globalThis.process=e}),"initEsm")();var ol="43.2.2",vi="obsidian-dev-utils",Gd=`.obsidian-dev-utils.code-highlighter-component textarea, .obsidian-dev-utils.code-highlighter-component pre, .obsidian-dev-utils.code-highlighter-component code {
+`)}i(rt,"getStackTrace");function fn(t,e){e??=globalThis.console,e.error(yi(t))}i(fn,"printError");function Wd(t){let e=fi.on(sl,t);return()=>{fi.offref(e)}}i(Wd,"registerAsyncErrorEventHandler");function Yn(t){throw t}i(Yn,"throwExpression");function Vd(t){return`${$d} --- ${t} --- (0)`}i(Vd,"generateStackTraceLine");function FA(t){fn(t)}i(FA,"handleAsyncError");i((function(){if(globalThis.process)return;let e={browser:!0,cwd(){return"/"},env:{},platform:"android"};globalThis.process=e}),"initEsm")();var ol="43.2.7",vi="obsidian-dev-utils",Gd=`.obsidian-dev-utils.code-highlighter-component textarea, .obsidian-dev-utils.code-highlighter-component pre, .obsidian-dev-utils.code-highlighter-component code {
   font-family: var(--font-monospace);
   line-height: var(--line-height-normal);
   margin: 0;
@@ -372,7 +407,7 @@ ${a}`,ve(()=>t(...n),e)}}i(it,"convertAsyncToSync");function ve(t,e){e??=rt(1),d
 `,encode:["`"],...c.current()})),f()}return h+=c.move(`
 `),s&&(h+=c.move(s+`
 `)),h+=c.move(d),u(),h}i(bm,"code");function nT(t,e,n){return(n?"":"    ")+t}i(nT,"map");function Ra(t){let e=t.options.quote||'"';if(e!=='"'&&e!=="'")throw new Error("Cannot serialize title with `"+e+"` for `options.quote`, expected `\"`, or `'`");return e}i(Ra,"checkQuote");function wm(t,e,n,a){let r=Ra(n),s=r==='"'?"Quote":"Apostrophe",l=n.enter("definition"),c=n.enter("label"),d=n.createTracker(a),u=d.move("[");return u+=d.move(n.safe(n.associationId(t),{before:u,after:"]",...d.current()})),u+=d.move("]: "),c(),!t.url||/[\0- \u007F]/.test(t.url)?(c=n.enter("destinationLiteral"),u+=d.move("<"),u+=d.move(n.safe(t.url,{before:u,after:">",...d.current()})),u+=d.move(">")):(c=n.enter("destinationRaw"),u+=d.move(n.safe(t.url,{before:u,after:t.title?" ":`
-`,...d.current()}))),c(),t.title&&(c=n.enter(`title${s}`),u+=d.move(" "+r),u+=d.move(n.safe(t.title,{before:u,after:r,...d.current()})),u+=d.move(r),c()),l(),u}i(wm,"definition");function Am(t){let e=t.options.emphasis||"*";if(e!=="*"&&e!=="_")throw new Error("Cannot serialize emphasis with `"+e+"` for `options.emphasis`, expected `*`, or `_`");return e}i(Am,"checkEmphasis");function vt(t){return"&#x"+t.toString(16).toUpperCase()+";"}i(vt,"encodeCharacterReference");function ja(t,e,n){let a=Ia(t),r=Ia(e);return a===void 0?r===void 0?n==="_"?{inside:!0,outside:!0}:{inside:!1,outside:!1}:r===1?{inside:!0,outside:!0}:{inside:!1,outside:!0}:a===1?r===void 0?{inside:!1,outside:!1}:r===1?{inside:!0,outside:!0}:{inside:!1,outside:!1}:r===void 0?{inside:!1,outside:!1}:r===1?{inside:!0,outside:!1}:{inside:!1,outside:!1}}i(ja,"encodeInfo");tc.peek=aT;function tc(t,e,n,a){let r=Am(n),s=n.enter("emphasis"),l=n.createTracker(a),c=l.move(r),d=l.move(n.containerPhrasing(t,{after:r,before:c,...l.current()})),u=d.charCodeAt(0),h=ja(a.before.charCodeAt(a.before.length-1),u,r);h.inside&&(d=vt(u)+d.slice(1));let f=d.charCodeAt(d.length-1),k=ja(a.after.charCodeAt(0),f,r);k.inside&&(d=d.slice(0,-1)+vt(f));let y=l.move(r);return s(),n.attentionEncodeSurroundingInfo={after:k.outside,before:h.outside},c+d+y}i(tc,"emphasis");function aT(t,e,n){return n.options.emphasis||"*"}i(aT,"emphasisPeek");var Oa=i((function(t){if(t==null)return oT;if(typeof t=="function")return Zi(t);if(typeof t=="object")return Array.isArray(t)?rT(t):iT(t);if(typeof t=="string")return sT(t);throw new Error("Expected function, string, or object as test")}),"convert");function rT(t){let e=[],n=-1;for(;++n<t.length;)e[n]=Oa(t[n]);return Zi(a);function a(...r){let s=-1;for(;++s<e.length;)if(e[s].apply(this,r))return!0;return!1}}i(rT,"anyFactory");function iT(t){let e=t;return Zi(n);function n(a){let r=a,s;for(s in t)if(r[s]!==e[s])return!1;return!0}}i(iT,"propsFactory");function sT(t){return Zi(e);function e(n){return n&&n.type===t}}i(sT,"typeFactory");function Zi(t){return e;function e(n,a,r){return!!(lT(n)&&t.call(this,n,typeof a=="number"?a:void 0,r||void 0))}}i(Zi,"castFactory");function oT(){return!0}i(oT,"ok");function lT(t){return t!==null&&typeof t=="object"&&"type"in t}i(lT,"looksLikeANode");function xm(t){return"\x1B[33m"+t+"\x1B[39m"}i(xm,"color");var Cm=[],Xi=!0,ea=!1,es="skip";function nc(t,e,n,a){let r;typeof e=="function"&&typeof n!="function"?(a=n,n=e):r=e;let s=Oa(r),l=a?-1:1;c(t,void 0,[])();function c(d,u,h){let f=d&&typeof d=="object"?d:{};if(typeof f.type=="string"){let y=typeof f.tagName=="string"?f.tagName:typeof f.name=="string"?f.name:void 0;Object.defineProperty(k,"name",{value:"node ("+xm(d.type+(y?"<"+y+">":""))+")"})}return k;function k(){let y=Cm,C,M,S;if((!e||s(d,u,h[h.length-1]||void 0))&&(y=cT(n(d,h)),y[0]===ea))return y;if("children"in d&&d.children){let T=d;if(T.children&&y[0]!==es)for(M=(a?T.children.length:-1)+l,S=h.concat(T);M>-1&&M<T.children.length;){let P=T.children[M];if(C=c(P,M,S)(),C[0]===ea)return C;M=typeof C[1]=="number"?C[1]:M+l}}return y}}i(c,"factory")}i(nc,"visitParents");function cT(t){return Array.isArray(t)?t:typeof t=="number"?[Xi,t]:t==null?Cm:[t]}i(cT,"toResult");function Tr(t,e,n,a){let r,s,l;typeof e=="function"&&typeof n!="function"?(s=void 0,l=e,r=n):(s=e,l=n,r=a),nc(t,s,c,r);function c(d,u){let h=u[u.length-1],f=h?h.children.indexOf(d):void 0;return l(d,f,h)}i(c,"overload")}i(Tr,"visit");function ts(t,e){let n=!1;return Tr(t,function(a){if("value"in a&&/\r?\n|\r/.test(a.value)||a.type==="break")return n=!0,ea}),!!((!t.depth||t.depth<3)&&Kn(t)&&(e.options.setext||n))}i(ts,"formatHeadingAsSetext");function Tm(t,e,n,a){let r=Math.max(Math.min(6,t.depth||1),1),s=n.createTracker(a);if(ts(t,n)){let h=n.enter("headingSetext"),f=n.enter("phrasing"),k=n.containerPhrasing(t,{...s.current(),before:`
+`,...d.current()}))),c(),t.title&&(c=n.enter(`title${s}`),u+=d.move(" "+r),u+=d.move(n.safe(t.title,{before:u,after:r,...d.current()})),u+=d.move(r),c()),l(),u}i(wm,"definition");function Am(t){let e=t.options.emphasis||"*";if(e!=="*"&&e!=="_")throw new Error("Cannot serialize emphasis with `"+e+"` for `options.emphasis`, expected `*`, or `_`");return e}i(Am,"checkEmphasis");function vt(t){return"&#x"+t.toString(16).toUpperCase()+";"}i(vt,"encodeCharacterReference");function ja(t,e,n){let a=Ia(t),r=Ia(e);return a===void 0?r===void 0?n==="_"?{inside:!0,outside:!0}:{inside:!1,outside:!1}:r===1?{inside:!0,outside:!0}:{inside:!1,outside:!0}:a===1?r===void 0?{inside:!1,outside:!1}:r===1?{inside:!0,outside:!0}:{inside:!1,outside:!1}:r===void 0?{inside:!1,outside:!1}:r===1?{inside:!0,outside:!1}:{inside:!1,outside:!1}}i(ja,"encodeInfo");tc.peek=aT;function tc(t,e,n,a){let r=Am(n),s=n.enter("emphasis"),l=n.createTracker(a),c=l.move(r),d=l.move(n.containerPhrasing(t,{after:r,before:c,...l.current()})),u=d.charCodeAt(0),h=ja(a.before.charCodeAt(a.before.length-1),u,r);h.inside&&(d=vt(u)+d.slice(1));let f=d.charCodeAt(d.length-1),k=ja(a.after.charCodeAt(0),f,r);k.inside&&(d=d.slice(0,-1)+vt(f));let y=l.move(r);return s(),n.attentionEncodeSurroundingInfo={after:k.outside,before:h.outside},c+d+y}i(tc,"emphasis");function aT(t,e,n){return n.options.emphasis||"*"}i(aT,"emphasisPeek");var Oa=i((function(t){if(t==null)return oT;if(typeof t=="function")return Zi(t);if(typeof t=="object")return Array.isArray(t)?rT(t):iT(t);if(typeof t=="string")return sT(t);throw new Error("Expected function, string, or object as test")}),"convert");function rT(t){let e=[],n=-1;for(;++n<t.length;)e[n]=Oa(t[n]);return Zi(a);function a(...r){let s=-1;for(;++s<e.length;)if(e[s].apply(this,r))return!0;return!1}}i(rT,"anyFactory");function iT(t){let e=t;return Zi(n);function n(a){let r=a,s;for(s in t)if(r[s]!==e[s])return!1;return!0}}i(iT,"propertiesFactory");function sT(t){return Zi(e);function e(n){return n&&n.type===t}}i(sT,"typeFactory");function Zi(t){return e;function e(n,a,r){return!!(lT(n)&&t.call(this,n,typeof a=="number"?a:void 0,r||void 0))}}i(Zi,"castFactory");function oT(){return!0}i(oT,"ok");function lT(t){return t!==null&&typeof t=="object"&&"type"in t}i(lT,"looksLikeANode");function xm(t){return"\x1B[33m"+t+"\x1B[39m"}i(xm,"color");var Cm=[],Xi=!0,ea=!1,es="skip";function nc(t,e,n,a){let r;typeof e=="function"&&typeof n!="function"?(a=n,n=e):r=e;let s=Oa(r),l=a?-1:1;c(t,void 0,[])();function c(d,u,h){let f=d&&typeof d=="object"?d:{};if(typeof f.type=="string"){let y=typeof f.tagName=="string"?f.tagName:typeof f.name=="string"?f.name:void 0;Object.defineProperty(k,"name",{value:"node ("+xm(d.type+(y?"<"+y+">":""))+")"})}return k;function k(){let y=Cm,C,M,S;if((!e||s(d,u,h[h.length-1]||void 0))&&(y=cT(n(d,h)),y[0]===ea))return y;if("children"in d&&d.children){let T=d;if(T.children&&y[0]!==es)for(M=(a?T.children.length:-1)+l,S=h.concat(T);M>-1&&M<T.children.length;){let P=T.children[M];if(C=c(P,M,S)(),C[0]===ea)return C;M=typeof C[1]=="number"?C[1]:M+l}}return y}}i(c,"factory")}i(nc,"visitParents");function cT(t){return Array.isArray(t)?t:typeof t=="number"?[Xi,t]:t==null?Cm:[t]}i(cT,"toResult");function Tr(t,e,n,a){let r,s,l;typeof e=="function"&&typeof n!="function"?(s=void 0,l=e,r=n):(s=e,l=n,r=a),nc(t,s,c,r);function c(d,u){let h=u[u.length-1],f=h?h.children.indexOf(d):void 0;return l(d,f,h)}i(c,"overload")}i(Tr,"visit");function ts(t,e){let n=!1;return Tr(t,function(a){if("value"in a&&/\r?\n|\r/.test(a.value)||a.type==="break")return n=!0,ea}),!!((!t.depth||t.depth<3)&&Kn(t)&&(e.options.setext||n))}i(ts,"formatHeadingAsSetext");function Tm(t,e,n,a){let r=Math.max(Math.min(6,t.depth||1),1),s=n.createTracker(a);if(ts(t,n)){let h=n.enter("headingSetext"),f=n.enter("phrasing"),k=n.containerPhrasing(t,{...s.current(),before:`
 `,after:`
 `});return f(),h(),k+`
 `+(r===1?"=":"-").repeat(k.length-(Math.max(k.lastIndexOf("\r"),k.lastIndexOf(`
