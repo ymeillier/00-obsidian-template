@@ -300,6 +300,7 @@ source ~/.zshrc
 ```
 
 
+see [https://github.com/ymeillier/00-zshrc](https://github.com/ymeillier/00-zshrc) for repo maintaining ~/.zshrc
 
 
 
