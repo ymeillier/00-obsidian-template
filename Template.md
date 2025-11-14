@@ -873,6 +873,8 @@ jupyter notebook
 A browser window/tab opens with jupyter:
 ![](./assets/Template/file-20251107144954610.png)
 
+
+
 open teh ipynb notebook:
 ![](./assets/Template/file-20251107145036252.png)
 

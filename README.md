@@ -1,3 +1,12 @@
+
+
+
+created script for xmind files.
+![file-20251114132400951](./assets/README/file-20251114132400951.png)
+
+
+
+
 This repository contains the .obsidian config directory used as our reference obsidian configurations when creating a new permanent or temporary vault with the `obsidian` or `obsidian_tmp` commands.
 
 Repo: [https://github.com/ymeillier/00-obsidian-template](https://github.com/ymeillier/00-obsidian-template)
