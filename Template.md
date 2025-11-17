@@ -506,6 +506,10 @@ Embeds a command-line terminal directly into Obsidian, allowing you to run shell
 
 ## xmind linker
 
+## Data file editor
+to open .json .xml and .txt files in obsidian
+
+
 # Custom Attachment Location
 Its configurations are set as such to match my intended behavior of storing files in a specific asset folder and subfolder named after the md file
 ![](./assets/README/file-20251101110747436.png)
