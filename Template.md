@@ -6,6 +6,13 @@ See [https://github.com/ymeillier/043-obsidian-setup/blob/main/README.md](https:
 
 Template.md explains configurations and plugins configured on our template vault. 
 
+Local Repo:
+```
+/Users/meillier/Documents/Obsidian/00-Template
+```
+
+
+
 # Themes
 
 ![file-20251111150922923](./assets/Template/file-20251111150922923.png)
