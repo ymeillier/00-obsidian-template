@@ -472,6 +472,29 @@ Glow is a clin based markdown reader that can be used as an alternative to Obsid
 
 # Plugins List
 
+## Regex Find/Replace
+![](./assets/Template/file-20251226154628517.png)
+Was useful when converting word documetn to markdown and having to change the references to images from 
+```
+<img src="./media/image2.png" style="width:6.5in;height:3.68333in" />
+```
+to 
+```
+![image2.png]
+```
+
+using the find replace tool with:
+from 
+```
+<img src="\./media/(.*?)" style=".*?" />
+```
+
+to:
+```
+![[$1]]
+```
+
+
 ## Colored Text
 Allows you to change the color of text within your notes, which is useful for highlighting and organizing information visually.
 

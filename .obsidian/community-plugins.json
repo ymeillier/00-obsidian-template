@@ -11,5 +11,7 @@
   "jupymd",
   "execute-code",
   "xmind-linker",
-  "data-files-editor"
+  "data-files-editor",
+  "obsidian-heading-shifter",
+  "obsidian-regex-replace"
 ]
