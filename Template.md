@@ -526,6 +526,11 @@ Enables you to run Jupyter Notebook code blocks (primarily Python) directly with
 ## Omnisearch
 A powerful search tool that provides more advanced search capabilities, including fuzzy matching and searching inside attachments like PDFs.
 
+## Text Extractor
+Required for Omnisearch OCR 
+
+![](./assets/Template/file-20251226170637844.png)
+
 ## Quiet Outline 
 Offers a cleaner, more customizable outline view of your document's headings.
 
