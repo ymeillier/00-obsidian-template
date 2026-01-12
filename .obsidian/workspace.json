@@ -4,15 +4,26 @@
     "type": "split",
     "children": [
       {
-        "id": "12b49cfb3aa0f40e",
+        "id": "aa334cf7951aca70",
         "type": "split",
         "children": [
           {
             "id": "3ae4213bb8875179",
             "type": "tabs",
+            "dimension": 58.30357142857143,
             "children": [
               {
-                "id": "e2413c2f58535460",
+                "id": "9e4ba6c709519360",
+                "type": "leaf",
+                "state": {
+                  "type": "quiet-outline",
+                  "state": {},
+                  "icon": "lines-of-text",
+                  "title": "Quiet Outline"
+                }
+              },
+              {
+                "id": "8cc2444dea8a0e3e",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -25,14 +36,16 @@
                   "title": "Template"
                 }
               }
-            ]
+            ],
+            "currentTab": 1
           },
           {
-            "id": "eb318e890a10c55e",
+            "id": "000c30681b775f22",
             "type": "tabs",
+            "dimension": 41.69642857142858,
             "children": [
               {
-                "id": "994d3c936a2bfbc0",
+                "id": "f2a55d3a75744977",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -85,6 +98,7 @@
       {
         "id": "b8952196cfb428d8",
         "type": "tabs",
+        "dimension": 45.634629493763754,
         "children": [
           {
             "id": "f5fd6ec8fc56aa0b",
@@ -127,10 +141,27 @@
             }
           }
         ]
+      },
+      {
+        "id": "96f831b1ec6e35af",
+        "type": "tabs",
+        "dimension": 54.36537050623624,
+        "children": [
+          {
+            "id": "889b091c44d4b3b4",
+            "type": "leaf",
+            "state": {
+              "type": "quiet-outline",
+              "state": {},
+              "icon": "lines-of-text",
+              "title": "Quiet Outline"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 335.5
   },
   "right": {
     "id": "97879f67e33f731a",
@@ -192,12 +223,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Template.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Template"
             }
           }
         ],
@@ -205,10 +237,11 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 292.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-gemini-assistant:Gemini Assistant": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -221,11 +254,18 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "994d3c936a2bfbc0",
+  "active": "2f80a0549b438ffe",
   "lastOpenFiles": [
     "Template.md",
-    "assets/Template/file-20251226170637844.png",
+    "assets/Template/file-20260111193117900.png",
+    "assets/Template/file-20260111192351503.png",
+    "assets/Template/file-20260111192253505.png",
     "README.md",
+    "repos.md",
+    "assets/Template/file-20260105084238863.png",
+    "auto-resize-editor.css",
+    "terminal-window.css",
+    "assets/Template/file-20251226170637844.png",
     "assets/Template/file-20251226154628517.png"
   ]
 }

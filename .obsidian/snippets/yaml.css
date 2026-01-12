@@ -1,0 +1,61 @@
+/* ======================================================
+   1. READING VIEW (PrismJS) - Safe & Scoped
+   ====================================================== */
+
+.markdown-rendered pre[class*="language-yaml"] {
+    background-color: #0d1117 !important; /* GitHub Dark BG */
+    color: #a5d6ff !important; /* Base text -> Blue */
+    font-family: 'JetBrains Mono', 'SF Mono', monospace !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+}
+
+/* Override Keys to Green */
+.markdown-rendered pre[class*="language-yaml"] .token.key,
+.markdown-rendered pre[class*="language-yaml"] .token.atrule {
+    color: #7ee787 !important;
+}
+
+/* Override Punctuation to White/Gray */
+.markdown-rendered pre[class*="language-yaml"] .token.punctuation {
+    color: #e6edf3 !important;
+}
+
+/* Override Comments to Gray */
+.markdown-rendered pre[class*="language-yaml"] .token.comment {
+    color: #8b949e !important;
+}
+
+/* Hide Indentation Guides */
+.markdown-rendered pre[class*="language-yaml"] .indentation-guide { 
+    display: none !important; 
+}
+
+
+/* ======================================================
+   2. LIVE PREVIEW (CodeMirror 6) - The Fix
+   ====================================================== */
+
+/* A. RESTRICT BLUE TEXT TO CODE BLOCKS ONLY */
+/* The previous error was targeting .cm-line directly. 
+   Adding .HyperMD-codeblock ensures this ONLY affects code blocks. */
+.cm-s-obsidian .cm-line.HyperMD-codeblock {
+    color: #a5d6ff !important; 
+}
+
+/* B. KEYS -> GREEN */
+.cm-s-obsidian .cm-line.HyperMD-codeblock .cm-propertyName,
+.cm-s-obsidian .cm-line.HyperMD-codeblock .cm-atom { 
+    color: #7ee787 !important;
+}
+
+/* C. COMMENTS -> GRAY */
+.cm-s-obsidian .cm-line.HyperMD-codeblock .cm-comment {
+    color: #8b949e !important;
+}
+
+/* D. PUNCTUATION/BRACKETS -> WHITE (Optional cleanup) */
+/* Ensures colons and dashes don't stay blue if the parser catches them */
+.cm-s-obsidian .cm-line.HyperMD-codeblock .cm-punctuation {
+    color: #e6edf3 !important;
+}

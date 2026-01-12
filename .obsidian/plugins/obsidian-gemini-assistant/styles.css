@@ -1,0 +1,63 @@
+/* Obsidian Gemini Assistant Styles */
+
+.gemini-chat-container {
+    padding: 0 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.gemini-header {
+    border-bottom: 1px solid var(--background-modifier-border);
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.gemini-message-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+.gemini-message {
+    padding: 8px 12px;
+    border-radius: 8px;
+    max-width: 85%;
+    word-wrap: break-word;
+}
+
+.gemini-message.user {
+    align-self: flex-end;
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+.gemini-message.model {
+    align-self: flex-start;
+    background-color: var(--background-secondary);
+    color: var(--text-normal);
+}
+
+.gemini-input-area {
+    margin-top: auto;
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    padding-top: 10px;
+    border-top: 1px solid var(--background-modifier-border);
+}
+
+.gemini-input-area textarea {
+    flex-grow: 1;
+    resize: none;
+    min-height: 40px;
+    max-height: 120px;
+    padding: 8px;
+}
+
+.gemini-input-area button {
+    height: 40px;
+}

@@ -1,0 +1,7 @@
+{
+  "authMode": "vertex",
+  "apiKey": "",
+  "gcpProject": "ai-prototyping-460721",
+  "gcpLocation": "us-central1",
+  "modelName": "gemini-1.5-flash"
+}

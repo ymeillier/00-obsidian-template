@@ -1,0 +1,64 @@
+/* =========================================================
+   CUSTOM "TERMINAL" CALLOUT
+   Usage: > [!terminal]
+          > $ kubectl get pods
+   ========================================================= */
+
+/* 1. The Main Window Container */
+.callout[data-callout="terminal"] {
+    background-color: #171717 !important;
+    border: 1px solid #333 !important;
+    border-radius: 8px !important;
+    padding: 0 !important;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    margin-top: 1em;
+}
+
+/* 2. The Window Title Bar (Top strip) */
+.callout[data-callout="terminal"] .callout-title {
+    background-color: #1e1e1e;
+    /* Slightly lighter header */
+    border-bottom: 1px solid #333;
+    padding: 12px 15px;
+    /* Height of the window bar */
+    font-size: 0 !important;
+    /* Hide the word "Terminal" */
+    color: transparent;
+}
+
+/* 3. The Traffic Lights (Red/Yellow/Green Buttons) */
+.callout[data-callout="terminal"] .callout-title::before {
+    content: "●";
+    font-size: 14px;
+    color: #ff5f56;
+    /* Red Dot */
+    text-shadow: 18px 0 #ffbd2e, 36px 0 #27c93f;
+    /* Yellow & Green Shadows */
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    top: 12px;
+    left: 15px;
+}
+
+/* 4. The Terminal Content (Code area) */
+.callout[data-callout="terminal"] .callout-content {
+    padding: 10px 15px 15px 15px !important;
+    font-family: 'JetBrains Mono', 'Menlo', monospace;
+    font-size: 0.9em;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+
+/* 5. Hide the default Callout Icon (Pencil/Info icon) */
+.callout[data-callout="terminal"] .callout-icon {
+    display: none !important;
+}
+
+/* 6. Formatting for code lines inside the callout */
+.callout[data-callout="terminal"] .callout-content p {
+    margin: 0;
+    white-space: pre-wrap;
+    /* Preserve formatting */
+}

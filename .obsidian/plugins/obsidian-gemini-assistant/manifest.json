@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-gemini-assistant",
+	"name": "Obsidian Gemini Assistant",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "An AI assistant for Obsidian fueled by Google Gemini and Vertex AI. Supports Chat and Image Generation.",
+	"author": "Antigravity",
+	"authorUrl": "https://github.com/yourname/obsidian-gemini-assistant",
+	"isDesktopOnly": true
+}

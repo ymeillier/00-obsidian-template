@@ -14,5 +14,6 @@
   "data-files-editor",
   "obsidian-heading-shifter",
   "obsidian-regex-replace",
-  "text-extractor"
+  "text-extractor",
+  "obsidian-gemini-assistant"
 ]

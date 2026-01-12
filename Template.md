@@ -564,7 +564,11 @@ There is a popular **Obsidian community plugin** called **JupyMD** that allows y
 There is currently **no community plugin** that allows directly creating and running a **Colab notebook** from within Obsidian, as this would require a specific integration with the Google Colaboratory service.
 
 ---
+## Google managed python
 
+google created an alias for python adn python3 command aliasing to /usr/bin/python3
+
+![](./assets/Template/file-20260111193117900.png)
 ## 💻 JupyMD Plugin
 
 The **JupyMD** plugin bridges the gap between your Markdown notes and Jupyter Notebooks using a tool called **Jupytext**.
@@ -588,6 +592,7 @@ To use JupyMD, you must have the following installed on your system outside of O
 3. **Jupytext**
 
 Out of the box JupyMD is set to use the python interpreter.  The code blocks of the jupyter notebook will call for hte execution of jupyter and we cannot change that to jupyer3.
+
 If we create a virtual environment anyway, which is a best practice, it will have the python interpreter
 ![](./assets/Template/file-20251107142214680.png)
 
@@ -600,7 +605,8 @@ It's highly recommended to use a virtual environment to manage dependencies for 
 Here's how you can do it:
 
 1. **Create a virtual environment:** Open your terminal and navigate to your project directory, then run:
-        `python3 -m venv {{basename}}  # Replace 'myenv' with your preferred environment name`
+        `python3 -m venv myvenv  # Replace 'myenv' with your preferred environment name`
+		in corp laptop run the the binary of python3 using the path obtained with `type -a python3`
     
 2. **Activate the virtual environment:**
         `source myenv/bin/activate`
@@ -618,7 +624,7 @@ Here's how you can do it:
 
 This approach prevents conflicts between project dependencies and keeps your global Python installation clean.
 
-### 🛠️ The Fix: JupyMD Settings
+### 🛠️ JupyMD Settings
 
 You need to tell the JupyMD plugin, or its underlying engine, to use the correct executable path: **`/usr/local/bin/python3`**.
 
@@ -765,6 +771,7 @@ Verify Kernel registration
 ```bash
 jupyter kernelspec list
 ```
+
 ![](./assets/Template/file-20251107133518050.png)
 
 
@@ -792,7 +799,10 @@ This phase isolates your project dependencies and ensures the required tools are
     
     - Navigate to your project directory (`00-Template`).
         
-    - Create the environment: `python3 -m venv template`
+    - Create the environment: `python3 -m venv template
+	    - ![](./assets/Template/file-20260111192253505.png) On the corporate mac, python is mapped to an alias.  ![](./assets/Template/file-20260111192351503.png)
+	    - 
+	    - `
         
     - **Fix Permissions (Crucial):** If activation fails with "permission denied," grant execute permission: `chmod +x template/bin/activate`
         
@@ -1148,6 +1158,497 @@ Since there's no direct Colab plugin, the common workaround for linking to Googl
 
 #
 # Custom CSS Configurations
+text
+yaml
+
+```yaml
+# Copyright 2021 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# [START cloud_sql_proxy_k8s_sa]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <YOUR-DEPLOYMENT-NAME>
+spec:
+  selector:
+    matchLabels:
+      app: <YOUR-APPLICATION-NAME>
+  template:
+    metadata:
+      labels:
+        app: <YOUR-APPLICATION-NAME>
+    spec:
+      serviceAccountName: <YOUR-KSA-NAME>
+      # [END cloud_sql_proxy_k8s_sa]
+      # [START cloud_sql_proxy_k8s_secrets]
+      containers:
+        - name: <YOUR-APPLICATION-NAME>
+          # ... other container configuration
+          env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: <YOUR-DB-SECRET>
+                  key: username
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: <YOUR-DB-SECRET>
+                  key: password
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: <YOUR-DB-SECRET>
+                  key: database
+        # [END cloud_sql_proxy_k8s_secrets]
+        # [START cloud_sql_proxy_k8s_container]
+      initContainers:
+        - name: cloud-sql-proxy
+          restartPolicy: Always
+          # It is recommended to use the latest version of the Cloud SQL Auth Proxy
+          # Make sure to update on a regular schedule!
+          image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.14.1
+          args:
+            # If connecting from a VPC-native GKE cluster, you can use the
+            # following flag to have the proxy connect over private IP
+            # - "--private-ip"
+
+            # If you are not connecting with Automatic IAM, you can delete
+            # the following flag.
+            - "--auto-iam-authn"
+
+            # Enable structured logging with LogEntry format:
+            - "--structured-logs"
+
+            # Replace DB_PORT with the port the proxy should listen on
+            - "--port=<DB_PORT>"
+            - "<INSTANCE_CONNECTION_NAME>"
+
+          securityContext:
+            # The default Cloud SQL Auth Proxy image runs as the
+            # "nonroot" user and group (uid: 65532) by default.
+            runAsNonRoot: true
+          # You should use resource requests/limits as a best practice to prevent
+          # pods from consuming too many resources and affecting the execution of
+          # other pods. You should adjust the following values based on what your
+          # application needs. For details, see
+          # https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+          resources:
+            requests:
+              # The proxy's memory use scales linearly with the number of active
+              # connections. Fewer open connections will use less memory. Adjust
+              # this value based on your application's requirements.
+              memory: "2Gi"
+              # The proxy's CPU use scales linearly with the amount of IO between
+              # the database and the application. Adjust this value based on your
+              # application's requirements.
+              cpu: "1"
+      # [END cloud_sql_proxy_k8s_container]
+```
+## yaml code block
+so that it looks better. 
+
+css snippet
+
+```
+/* ======================================================
+   GITHUB YAML - THE INVERTED STRATEGY
+   Logic: Set BASE color to Blue (for values), 
+          then override Keys to Green.
+   ====================================================== */
+
+/* --- 1. READING VIEW (PrismJS) --- */
+
+/* A. Set the Container Background & Base Text to BLUE */
+.markdown-rendered pre[class*="language-yaml"] {
+    background-color: #0d1117 !important; /* GitHub Dark BG */
+    color: #a5d6ff !important; /* <--- BASE COLOR IS NOW BLUE (Values) */
+    font-family: 'JetBrains Mono', 'SF Mono', monospace !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+}
+
+/* B. Paint KEYS (Properties) GREEN */
+.markdown-rendered pre[class*="language-yaml"] .token.key,
+.markdown-rendered pre[class*="language-yaml"] .token.atrule {
+    color: #7ee787 !important;
+}
+
+/* C. Paint PUNCTUATION (Colons, Dashes) WHITE */
+.markdown-rendered pre[class*="language-yaml"] .token.punctuation {
+    color: #e6edf3 !important;
+}
+
+/* D. Paint COMMENTS GRAY */
+.markdown-rendered pre[class*="language-yaml"] .token.comment {
+    color: #8b949e !important;
+}
+
+/* --- 2. LIVE PREVIEW (CodeMirror 6) --- */
+
+/* A. Base Text Color -> BLUE */
+/* Note: This turns unquoted text in code blocks blue */
+.cm-s-obsidian .cm-line {
+    color: #a5d6ff !important; 
+}
+
+/* B. Keys -> GREEN */
+.cm-s-obsidian .cm-line .cm-propertyName,
+.cm-s-obsidian .cm-line .cm-atom { 
+    color: #7ee787 !important;
+}
+
+/* C. Comments -> GRAY */
+.cm-s-obsidian .cm-line .cm-comment {
+    color: #8b949e !important;
+}
+
+/* D. Cursor Color (Optional: keeps cursor visible on dark bg) */
+.cm-s-obsidian .cm-cursor {
+    border-left-color: #e6edf3 !important;
+}
+
+/* --- 3. CLEANUP --- */
+/* Hide indentation guides for that clean GitHub look */
+.markdown-rendered pre[class*="language-yaml"] .indentation-guide { 
+    display: none !important; 
+}
+```
+
+```sh
+drets
+```
+
+```yaml
+# Copyright 2021 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# [START cloud_sql_proxy_k8s_sa]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <YOUR-DEPLOYMENT-NAME>
+spec:
+  selector:
+    matchLabels:
+      app: <YOUR-APPLICATION-NAME>
+  template:
+    metadata:
+      labels:
+        app: <YOUR-APPLICATION-NAME>
+    spec:
+      serviceAccountName: <YOUR-KSA-NAME>
+      # [END cloud_sql_proxy_k8s_sa]
+      # [START cloud_sql_proxy_k8s_secrets]
+      containers:
+        - name: <YOUR-APPLICATION-NAME>
+          # ... other container configuration
+          env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: <YOUR-DB-SECRET>
+                  key: username
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: <YOUR-DB-SECRET>
+                  key: password
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: <YOUR-DB-SECRET>
+                  key: database
+        # [END cloud_sql_proxy_k8s_secrets]
+        # [START cloud_sql_proxy_k8s_container]
+      initContainers:
+        - name: cloud-sql-proxy
+          restartPolicy: Always
+          # It is recommended to use the latest version of the Cloud SQL Auth Proxy
+          # Make sure to update on a regular schedule!
+          image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.14.1
+          args:
+            # If connecting from a VPC-native GKE cluster, you can use the
+            # following flag to have the proxy connect over private IP
+            # - "--private-ip"
+
+            # If you are not connecting with Automatic IAM, you can delete
+            # the following flag.
+            - "--auto-iam-authn"
+
+            # Enable structured logging with LogEntry format:
+            - "--structured-logs"
+
+            # Replace DB_PORT with the port the proxy should listen on
+            - "--port=<DB_PORT>"
+            - "<INSTANCE_CONNECTION_NAME>"
+
+          securityContext:
+            # The default Cloud SQL Auth Proxy image runs as the
+            # "nonroot" user and group (uid: 65532) by default.
+            runAsNonRoot: true
+          # You should use resource requests/limits as a best practice to prevent
+          # pods from consuming too many resources and affecting the execution of
+          # other pods. You should adjust the following values based on what your
+          # application needs. For details, see
+          # https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+          resources:
+            requests:
+              # The proxy's memory use scales linearly with the number of active
+              # connections. Fewer open connections will use less memory. Adjust
+              # this value based on your application's requirements.
+              memory: "2Gi"
+              # The proxy's CPU use scales linearly with the amount of IO between
+              # the database and the application. Adjust this value based on your
+              # application's requirements.
+              cpu: "1"
+      # [END cloud_sql_proxy_k8s_container]
+```
+
+## Terminal block
+```css terminal-window.css
+/* Style for code blocks labeled with 'terminal' */
+.markdown-rendered pre[class*="language-terminal"] {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding-top: 35px; /* Space for the "buttons" */
+    position: relative;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Creating the macOS-style window dots */
+.markdown-rendered pre[class*="language-terminal"]::before {
+    content: "● ● ●";
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #ff5f56; /* Red */
+    text-shadow: 18px 0 #ffbd2e, 36px 0 #27c93f; /* Yellow & Green */
+}
+```
+
+enable the snippet.
+![](./assets/Template/file-20260105084238863.png)
+
+In your note, use the language tag `terminal` or `bash-terminal`:
+  
+
+````
+```terminal
+$ kubectl get pods
+NAME      READY   STATUS    RESTARTS   AGE
+nginx     1/1     Running   0          10m
+```
+````
+
+```terminal
+$ kubectl get pods
+NAME      READY   STATUS    RESTARTS   AGE
+nginx     1/1     Running   0          10m
+```
+
+### In both reading and editing views
+Getting CSS to work in **Live Preview (Editing View)** is trickier than Reading View because Obsidian uses two different "engines":
+
+- **Reading View:** Uses standard HTML (easy to style).
+    
+- **Live Preview:** Uses **CodeMirror 6**, which breaks code blocks into individual `<div>` lines and handles language tagging differently.
+    
+
+To make your "Terminal Window" look appear in both views, you need to add specific selectors for the editor.
+
+```css
+/* =========================================================
+   CUSTOM "TERMINAL" CALLOUT
+   Usage: > [!terminal]
+          > $ kubectl get pods
+   ========================================================= */
+
+/* 1. The Main Window Container */
+.callout[data-callout="terminal"] {
+    background-color: #171717 !important;
+    border: 1px solid #333 !important;
+    border-radius: 8px !important;
+    padding: 0 !important;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    margin-top: 1em;
+}
+
+/* 2. The Window Title Bar (Top strip) */
+.callout[data-callout="terminal"] .callout-title {
+    background-color: #1e1e1e; /* Slightly lighter header */
+    border-bottom: 1px solid #333;
+    padding: 12px 15px; /* Height of the window bar */
+    font-size: 0 !important; /* Hide the word "Terminal" */
+    color: transparent;
+}
+
+/* 3. The Traffic Lights (Red/Yellow/Green Buttons) */
+.callout[data-callout="terminal"] .callout-title::before {
+    content: "●";
+    font-size: 14px;
+    color: #ff5f56; /* Red Dot */
+    text-shadow: 18px 0 #ffbd2e, 36px 0 #27c93f; /* Yellow & Green Shadows */
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    top: 12px;
+    left: 15px;
+}
+
+/* 4. The Terminal Content (Code area) */
+.callout[data-callout="terminal"] .callout-content {
+    padding: 10px 15px 15px 15px !important;
+    font-family: 'JetBrains Mono', 'Menlo', monospace;
+    font-size: 0.9em;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+
+/* 5. Hide the default Callout Icon (Pencil/Info icon) */
+.callout[data-callout="terminal"] .callout-icon {
+    display: none !important;
+}
+
+/* 6. Formatting for code lines inside the callout */
+.callout[data-callout="terminal"] .callout-content p {
+    margin: 0;
+    white-space: pre-wrap; /* Preserve formatting */
+}
+```
+
+```terminal
+$kubectl gdescribe pod mypod
+Name: nginx-1-74c7bbdb84-nvwsc
+Namespace: default
+Node: gke-standard-cluster-1-default-pool-bc4ec334-0hmk/10.128.0.5
+Start Time: Sun, 16 Dec 2018 14:29:38 -0500
+Labels: pod-template-hash=3073668640
+run=nginx-1
+Annotations: kubernetes.io/limit-ranger=LimitRanger plugin set: cpu ...
+Status: Running
+IP: 10.8.3.3
+Controlled By: ReplicaSet/nginx-1-74c7bbdb84
+Containers:
+nginx-1:
+Container ID: docker://dce87d274e6d25300b07ec244c265d42806579fee...
+Image: nginx:latest
+Image ID: docker-pullable://nginx@sha256:87e9b6904b4286b8d41...
+Port: \<none\>
+Host Port: \<none\>
+State: Running
+Started: Sun, 16 Dec 2018 14:29:44 -0500
+Ready: True
+Restart Count: 0
+Requests:
+cpu: 100m
+Environment: \<none\>
+Mounts:
+/var/run/secrets/kubernetes.io/serviceaccount from default-tok...
+Conditions:
+Type Status
+Initialized True
+Ready True
+PodScheduled True
+Volumes:
+default-token-nphcg:
+Type: Secret (a volume populated by a Secret)
+SecretName: default-token-nphcg
+Optional: false
+QoS Class: Burstable
+Node-Selectors: \<none\>
+Tolerations: node.kubernetes.io/not-ready:NoExecute for 300s
+node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+Type Reason Age From Message
+---- ------ ---- ---- -------
+Normal Sche... 1m default-scheduler Successf...
+Normal Succ... 1m kubelet, gke-standard-cl... MountVol...
+Normal Pull... 1m kubelet, gke-standard-cl... pulling ...
+Normal Pull... 1m kubelet, gke-standard-cl... Successf...
+Normal Crea... 1m kubelet, gke-standard-cl... Created ...
+Normal Star... 1m kubelet, gke-standard-cl... Started ...
+```
+
+> [!terminal]
+> $kubectl gdescribe pod mypod
+> Name: nginx-1-74c7bbdb84-nvwsc
+> Namespace: default
+> Node: gke-standard-cluster-1-default-pool-bc4ec334-0hmk/10.128.0.5
+> Start Time: Sun, 16 Dec 2018 14:29:38 -0500
+> Labels: pod-template-hash=3073668640
+> run=nginx-1
+Annotations: kubernetes.io/limit-ranger=LimitRanger plugin set: cpu ...
+> Status: Running
+> IP: 10.8.3.3
+> Controlled By: ReplicaSet/nginx-1-74c7bbdb84
+> Containers:
+> nginx-1:
+> Container ID: docker://dce87d274e6d25300b07ec244c265d42806579fee...
+ > image: nginx:latest
+> Image ID: docker-pullable://nginx@sha256:87e9b6904b4286b8d41...
+> Port: \<none\>
+> Host Port: \<none\>
+> State: Running
+> Started: Sun, 16 Dec 2018 14:29:44 -0500
+> Ready: True
+> Restart Count: 0
+> Requests:
+> cpu: 100m
+> Environment: \<none\>
+> Mounts:
+> /var/run/secrets/kubernetes.io/serviceaccount from default-tok...
+> Conditions:
+> Type Status
+> Initialized True
+> Ready True
+> PodScheduled True
+> Volumes:
+default-token-nphcg:
+Type: Secret (a volume populated by a Secret)
+SecretName: default-token-nphcg
+Optional: false
+QoS Class: Burstable
+Node-Selectors: \<none\>
+Tolerations: node.kubernetes.io/not-ready:NoExecute for 300s
+node.kubernetes.io/unreachable:NoExecute for 300s
+> Events:
+> Type Reason Age From Message
+> ---- ------ ---- ---- -------
+> Normal Sche... 1m default-scheduler Successf...
+> Normal Succ... 1m kubelet, gke-standard-cl... MountVol...
+> Normal Pull... 1m kubelet, gke-standard-cl... pulling ...
+> Normal Pull... 1m kubelet, gke-standard-cl... Successf...
+> Normal Crea... 1m kubelet, gke-standard-cl... Created ...
+> Normal Star... 1m kubelet, gke-standard-cl... Started ...
+
 
 ## 🛠️ Resize Edit Area with Window Size
 

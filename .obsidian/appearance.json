@@ -1,6 +1,8 @@
 {
   "enabledCssSnippets": [
-    "auto-resize-editor"
+    "auto-resize-editor",
+    "terminal-window",
+    "yaml"
   ],
   "cssTheme": "GitHub Theme"
 }
