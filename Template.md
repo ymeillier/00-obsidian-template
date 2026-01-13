@@ -1257,6 +1257,47 @@ spec:
               cpu: "1"
       # [END cloud_sql_proxy_k8s_container]
 ```
+## Quiet Outline: Search Result bounding box
+instead of the default underline for search results, 
+![](./assets/Template/file-20260113121102512.png)
+we want an orange bounding box
+```css
+/* Change the Quiet Outline search underline to an Orange Box */
+.quiet-outline .n-tree-node-content__text span[style*="text-decoration: underline"],
+.quiet-outline mark, 
+.quiet-outline .search-result {
+    text-decoration: none !important; /* Removes the default underline */
+    background-color: #FF8C00 !important; /* Bright Orange background */
+    color: white !important; /* Makes text white for better contrast on orange */
+    padding: 0 4px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+```
+## Quiet Outline: highlight selection
+when located in the reading/editing pane, we want the header of the section to be highlithed so that it is easily locatable.
+
+![](./assets/Template/file-20260113100326110.png)
+
+
+this is the css snippet to enable that:
+
+```css
+/* Highlight the active header in Quiet Outline with Bright Orange */
+.quiet-outline .n-tree-node.located .n-tree-node-content__text {
+    color: #FF8C00 !important; /* Bright Orange */
+    font-weight: bold !important;
+    font-size: 1.1em;
+    text-shadow: 0px 0px 2px rgba(255, 140, 0, 0.3); /* Subtle orange glow */
+}
+
+/* Add a background highlight to the active row */
+.quiet-outline .n-tree-node.located {
+    background-color: rgba(255, 165, 0, 0.15) !important; /* Light orange transparent background */
+    border-left: 3px solid #FF8C00; /* Adds an orange vertical bar to the left */
+    border-radius: 4px;
+}
+```
 ## yaml code block
 so that it looks better. 
 

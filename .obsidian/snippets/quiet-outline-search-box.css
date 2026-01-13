@@ -1,0 +1,11 @@
+/* Change the Quiet Outline search underline to an Orange Box */
+.quiet-outline .n-tree-node-content__text span[style*="text-decoration: underline"],
+.quiet-outline mark, 
+.quiet-outline .search-result {
+    text-decoration: none !important; /* Removes the default underline */
+    background-color: #FF8C00 !important; /* Bright Orange background */
+    color: white !important; /* Makes text white for better contrast on orange */
+    padding: 0 4px;
+    border-radius: 3px;
+    font-weight: bold;
+}

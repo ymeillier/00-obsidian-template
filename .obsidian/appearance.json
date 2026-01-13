@@ -2,7 +2,8 @@
   "enabledCssSnippets": [
     "auto-resize-editor",
     "terminal-window",
-    "yaml"
+    "yaml",
+    "quiet-outline-highlight"
   ],
   "cssTheme": "GitHub Theme"
 }

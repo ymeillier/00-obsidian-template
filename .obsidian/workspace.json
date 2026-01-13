@@ -10,7 +10,7 @@
           {
             "id": "3ae4213bb8875179",
             "type": "tabs",
-            "dimension": 58.30357142857143,
+            "dimension": 71.1660777385159,
             "children": [
               {
                 "id": "9e4ba6c709519360",
@@ -42,7 +42,7 @@
           {
             "id": "000c30681b775f22",
             "type": "tabs",
-            "dimension": 41.69642857142858,
+            "dimension": 28.833922261484098,
             "children": [
               {
                 "id": "f2a55d3a75744977",
@@ -223,13 +223,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Template.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Template"
+              "title": "Outline"
             }
           }
         ],
@@ -254,9 +253,11 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "2f80a0549b438ffe",
+  "active": "f2a55d3a75744977",
   "lastOpenFiles": [
     "Template.md",
+    "assets/Template/file-20260113121102512.png",
+    "assets/Template/file-20260113100326110.png",
     "assets/Template/file-20260111193117900.png",
     "assets/Template/file-20260111192351503.png",
     "assets/Template/file-20260111192253505.png",
