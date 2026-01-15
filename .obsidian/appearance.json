@@ -3,7 +3,8 @@
     "auto-resize-editor",
     "terminal-window",
     "yaml",
-    "quiet-outline-highlight"
+    "quiet-outline-highlight",
+    "indented-headers"
   ],
   "cssTheme": "GitHub Theme"
 }

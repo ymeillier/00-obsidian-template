@@ -1257,6 +1257,26 @@ spec:
               cpu: "1"
       # [END cloud_sql_proxy_k8s_container]
 ```
+## Indented Headers
+
+in obsidian, headers for all levels are identically tabulated in the editor. for example see the included screen shot. I would like obsidian to be configured so that Heading 1 (#) headers have no leading spaces, Heading 2 (##) have two spaces in front of the text., H3 3 spaces,... This would make visualizing a table of content such as the one i currently have much easier to read/interpret.
+```css
+/* Indent headings in Live Preview and Source Mode */
+.cm-header-1 { padding-left: 0px !important; }
+.cm-header-2 { padding-left: 20px !important; }
+.cm-header-3 { padding-left: 40px !important; }
+.cm-header-4 { padding-left: 60px !important; }
+.cm-header-5 { padding-left: 80px !important; }
+.cm-header-6 { padding-left: 100px !important; }
+
+/* Optional: Indent headings in Reading Mode */
+.markdown-rendered h1 { margin-left: 0px !important; }
+.markdown-rendered h2 { margin-left: 20px !important; }
+.markdown-rendered h3 { margin-left: 40px !important; }
+.markdown-rendered h4 { margin-left: 60px !important; }
+.markdown-rendered h5 { margin-left: 80px !important; }
+.markdown-rendered h6 { margin-left: 100px !important; }
+```
 ## Quiet Outline: Search Result bounding box
 instead of the default underline for search results, 
 ![](./assets/Template/file-20260113121102512.png)
