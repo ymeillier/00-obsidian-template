@@ -15,5 +15,6 @@
   "obsidian-heading-shifter",
   "obsidian-regex-replace",
   "text-extractor",
-  "obsidian-gemini-assistant"
+  "obsidian-gemini-assistant",
+  "image-captions"
 ]

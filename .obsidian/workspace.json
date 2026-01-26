@@ -10,7 +10,7 @@
           {
             "id": "3ae4213bb8875179",
             "type": "tabs",
-            "dimension": 71.1660777385159,
+            "dimension": 81.7351598173516,
             "children": [
               {
                 "id": "9e4ba6c709519360",
@@ -28,12 +28,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Template.md",
+                    "file": "README.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "Template"
+                  "title": "README"
                 }
               }
             ],
@@ -42,7 +42,7 @@
           {
             "id": "000c30681b775f22",
             "type": "tabs",
-            "dimension": 28.833922261484098,
+            "dimension": 18.2648401826484,
             "children": [
               {
                 "id": "f2a55d3a75744977",
@@ -255,18 +255,20 @@
   },
   "active": "f2a55d3a75744977",
   "lastOpenFiles": [
-    "Template.md",
     "README.md",
-    "assets/Template/file-20260113121102512.png",
-    "assets/Template/file-20260113100326110.png",
-    "assets/Template/file-20260111193117900.png",
-    "assets/Template/file-20260111192351503.png",
-    "assets/Template/file-20260111192253505.png",
+    "assets/README/file-20260126101755036.png",
+    "assets/README/file-20260126101713216.png",
+    "assets/README/file-20260126101700313.png",
+    "assets/README/file-20260126101649231.png",
+    "assets/README/file-20260126101640142.png",
+    "assets/README/file-20260126101623233.png",
+    "assets/README/file-20260126101546839.png",
+    "assets/README/file-20260126101528006.png",
+    "assets/README/file-20260126101501911.png",
+    "assets/README/file-20260126101441419.png",
+    "Template.md",
     "repos.md",
-    "assets/Template/file-20260105084238863.png",
     "auto-resize-editor.css",
-    "terminal-window.css",
-    "assets/Template/file-20251226170637844.png",
-    "assets/Template/file-20251226154628517.png"
+    "terminal-window.css"
   ]
 }
