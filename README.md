@@ -32,6 +32,23 @@ in the note use the standard embedding syntax:
 ![[mindmap.xmind]]
 
 
+## Copy entire pages content: cdn url to file
+When copy paste the content of a qwiklab for example, it will paste fine into a markdown note however the images will point to the url of the cdn image....
+![](./assets/README/file-20260126145551196.png)
+we want to download the images to our local vault tho and for that we just have to use the built-in function `Download attachments for current file`
+
+![](./assets/README/file-20260126145512289.png)
+
+ 
+
+IT will find the file to be downloaded
+![](./assets/README/file-20260126145649966.png)
+
+and once done, the markdown is updated to pointing to those local files:
+![](./assets/README/file-20260126145723061.png)
+
+
+
 ## Flavored markdown
 
 https://help.obsidian.md/obsidian-flavored-markdown
