@@ -54,6 +54,23 @@ and once done, the markdown is updated to pointing to those local files:
 https://help.obsidian.md/obsidian-flavored-markdown
 ![](./assets/README/file-20260126101755036.png)
 
+## Callout Dropdown
+
+![](./assets/README/file-20260127081156730.png)
+Title remains:
+![](./assets/README/file-20260127081405644.png)
+
+
+
+
+
+![](./assets/README/file-20260127081224373.png)
+
+
+![](./assets/README/file-20260127081617556.png)
+![](./assets/README/file-20260127081629377.png)
+![](./assets/README/file-20260127081651178.png)
+
 ## callouts
 
 
@@ -72,7 +89,7 @@ https://help.obsidian.md/callouts#Supported+types
 
 ![](./assets/README/file-20260126100542164.png)
 
-### tip|hint|important
+### tip | hint | important
 ![](./assets/README/file-20260126101441419.png)
 ### Success | check | done
 ![](./assets/README/file-20260126101501911.png)

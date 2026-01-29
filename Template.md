@@ -363,6 +363,8 @@ added to a subdirectory of the folder because it was not configured properly:
 ![](./assets/README/file-20251031173745795.png)
 This is what the customer attachment location plugin is for using these configurations for making sure the screenshots are saved an assets folder 
 
+# Emoji shortcode
+So that obsidian can interpreted the github style emoji codes like `:classical_building:` rendering to the actual icon 🏛️
 
 # Translucion: Aggregating Notes/.md
 

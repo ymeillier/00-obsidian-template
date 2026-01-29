@@ -16,5 +16,7 @@
   "obsidian-regex-replace",
   "text-extractor",
   "obsidian-gemini-assistant",
-  "image-captions"
+  "image-captions",
+  "emoji-shortcodes",
+  "obsidian-emoji-toolbar"
 ]

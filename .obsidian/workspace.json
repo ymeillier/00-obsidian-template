@@ -28,12 +28,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "README.md",
+                    "file": "Template.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "README"
+                  "title": "Template"
                 }
               }
             ],
@@ -255,18 +255,18 @@
   },
   "active": "f2a55d3a75744977",
   "lastOpenFiles": [
+    "Template.md",
     "README.md",
+    "assets/README/file-20260127081651178.png",
+    "assets/README/file-20260127081629377.png",
+    "assets/README/file-20260127081617556.png",
+    "assets/README/file-20260127081405644.png",
+    "assets/README/file-20260127081224373.png",
+    "assets/README/file-20260127081156730.png",
     "assets/README/file-20260126145723061.png",
     "assets/README/file-20260126145649966.png",
     "assets/README/file-20260126145551196.png",
     "assets/README/file-20260126145512289.png",
-    "Template.md",
-    "assets/README/file-20260126101755036.png",
-    "assets/README/file-20260126101713216.png",
-    "assets/README/file-20260126101700313.png",
-    "assets/README/file-20260126101649231.png",
-    "assets/README/file-20260126101640142.png",
-    "assets/README/file-20260126101623233.png",
     "repos.md",
     "auto-resize-editor.css",
     "terminal-window.css"
