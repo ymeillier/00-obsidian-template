@@ -481,6 +481,17 @@ Glow is a clin based markdown reader that can be used as an alternative to Obsid
 
 # Plugins List
 
+## Better Export PDF:
+
+If you don't want to create a new file every time, there is a community plugin called **"Better Export PDF"**.
+
+- **Install:** Go to `Settings` > `Community Plugins` > `Browse` and search for **Better Export PDF** by l1xnan.
+- **Use:** Once installed, highlight the text/section you want to export.
+- Open the **Command Palette** (`Ctrl/Cmd + P`) and run `Better Export PDF: Export Current File to PDF`.
+- In the settings window that pops up, look for the option to **Export Selected Text Only**.
+
+
+
 ## Regex Find/Replace
 ![](./assets/Template/file-20251226154628517.png)
 Was useful when converting word documetn to markdown and having to change the references to images from 
