@@ -10,7 +10,7 @@
           {
             "id": "3ae4213bb8875179",
             "type": "tabs",
-            "dimension": 53.427561837455826,
+            "dimension": 42.54416961130742,
             "children": [
               {
                 "id": "bd357c0b82c0756e",
@@ -42,7 +42,7 @@
           {
             "id": "000c30681b775f22",
             "type": "tabs",
-            "dimension": 46.572438162544174,
+            "dimension": 57.455830388692576,
             "children": [
               {
                 "id": "f2a55d3a75744977",
@@ -161,7 +161,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 335.5
+    "width": 412.5
   },
   "right": {
     "id": "97879f67e33f731a",
@@ -236,7 +236,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292.5
+    "width": 292.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -255,23 +256,40 @@
   },
   "active": "f2a55d3a75744977",
   "lastOpenFiles": [
-    "gemini-scribe/Prompts/example-expert.md",
-    "gemini-scribe/Prompts",
-    "gemini-scribe",
     "Template.md",
+    "assets/Template/file-20260212153843444.png",
+    "assets/Template/file-20260212153656387.png",
+    "assets/Template/file-20260212152829287.png",
+    "assets/Template/file-20260212152744617.png",
+    "assets/Template/file-20260212152715955.png",
+    "assets/Template/file-20260212152622087.png",
+    "assets/Template/file-20260212152036245.png",
+    "assets/Template/file-20260212151917067.png",
+    "testvenv/bin/adk",
+    "testvenv/lib/python3.12/site-packages/google_adk-1.25.0.dist-info/licenses/LICENSE",
+    "testvenv/lib/python3.12/site-packages/google_adk-1.25.0.dist-info/licenses",
+    "testvenv/lib/python3.12/site-packages/google_adk-1.25.0.dist-info/entry_points.txt",
+    "testvenv/lib/python3.12/site-packages/google_adk-1.25.0.dist-info/WHEEL",
+    "testvenv/lib/python3.12/site-packages/google_adk-1.25.0.dist-info/REQUESTED",
+    "testvenv/lib/python3.12/site-packages/google_adk-1.25.0.dist-info/RECORD",
+    "testvenv/lib/python3.12/site-packages/google_adk-1.25.0.dist-info/METADATA",
+    "testvenv/lib/python3.12/site-packages/google_adk-1.25.0.dist-info/INSTALLER",
+    "testvenv/lib/python3.12/site-packages/google_adk-1.25.0.dist-info",
+    "testvenv/lib/python3.12/site-packages/google/adk/cli/browser/assets/ADK-512-color.svg",
+    "testvenv/lib/python3.12/site-packages/google/adk/sessions/migration/README.md",
+    "testvenv/lib/python3.12/site-packages/google/adk/cli/built_in_agents/README.md",
+    "testvenv/lib/python3.12/site-packages/google/adk/cli/browser/adk_favicon.svg",
+    "testvenv/lib/python3.12/site-packages/opentelemetry/sdk/metrics/_internal/exponential_histogram/mapping/ieee_754.md",
+    "testvenv/lib/python3.12/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.md",
+    "testvenv/lib/python3.12/site-packages/starlette-0.52.1.dist-info/licenses/LICENSE.md",
+    "testvenv/lib/python3.12/site-packages/httpcore-1.0.9.dist-info/licenses/LICENSE.md",
+    "testvenv/lib/python3.12/site-packages/uvicorn-0.40.0.dist-info/licenses/LICENSE.md",
+    "testvenv/lib/python3.12/site-packages/docstring_parser-0.17.0.dist-info/licenses/LICENSE.md",
+    "testvenv/lib/python3.12/site-packages/idna-3.11.dist-info/licenses/LICENSE.md",
+    "testvenv/lib/python3.12/site-packages/pyarrow/tests/data/orc/README.md",
+    "testvenv/lib/python3.12/site-packages/pyparsing/ai/best_practices.md",
+    "gemini-scribe/Prompts/example-expert.md",
     "README.md",
-    "assets/README/file-20260127081651178.png",
-    "assets/README/file-20260127081629377.png",
-    "assets/README/file-20260127081617556.png",
-    "assets/README/file-20260127081405644.png",
-    "assets/README/file-20260127081224373.png",
-    "assets/README/file-20260127081156730.png",
-    "assets/README/file-20260126145723061.png",
-    "assets/README/file-20260126145649966.png",
-    "assets/README/file-20260126145551196.png",
-    "assets/README/file-20260126145512289.png",
-    "repos.md",
-    "auto-resize-editor.css",
-    "terminal-window.css"
+    "repos.md"
   ]
 }

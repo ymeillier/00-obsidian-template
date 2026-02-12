@@ -1,0 +1,19 @@
+/* 1. Universal Fix for Reading Mode */
+.markdown-rendered .task-list-item.is-checked,
+.markdown-rendered .task-list-item.is-checked * {
+    text-decoration: none !important;
+}
+
+/* 2. Universal Fix for Editing Mode (Live Preview) */
+/* Targets the specific 'strikethrough' class and any checked list text */
+.markdown-source-view.mod-cm6 .cm-strikethrough,
+.markdown-source-view.mod-cm6 .cm-task-list-text,
+.markdown-source-view.mod-cm6 .is-checked {
+    text-decoration: none !important;
+    display: inline-block; /* Helps some themes recognize the rule */
+}
+
+/* 3. Force-remove the line from the underlying editor engine */
+span.cm-strikethrough {
+    text-decoration: none !important;
+}

@@ -620,17 +620,54 @@ Here's how you can do it:
 1. **Create a virtual environment:** Open your terminal and navigate to your project directory, then run:
         `python3 -m venv myvenv  # Replace 'myenv' with your preferred environment name`
 		in corp laptop run the the binary of python3 using the path obtained with `type -a python3`
-    
+
+![](./assets/Template/file-20260212150207278.png)
+
+![](./assets/Template/file-20260212152036245.png)
+
+
 2. **Activate the virtual environment:**
         `source myenv/bin/activate`
-    
+
+![](./assets/Template/file-20260212150258998.png)
+
     Your shell prompt will usually change to indicate the active environment (e.g., `(myenv) meillier@meillier-macbookpro ... %`).
     
 3. **Install packages within the environment:** Now, any packages you install will be local to this environment.
         `python3 -m pip install jupyterlab`
         `python3 -m pip install notebook`
         ``python3 -m pip install jupytext``
-    
+on the corp mac airlock prevents installation of libraries and requires installing packages from the internal mirror controlled by airlock
+![](./assets/Template/file-20260212151025830.png)
+need to run `gcert`
+![](./assets/Template/file-20260212151117217.png)
+
+after doing so we can installa packages:
+![](./assets/Template/file-20260212151156052.png)
+
+
+the packages are local to virtual environment:
+![](./assets/Template/file-20260212151917067.png)
+
+![](./assets/Template/file-20260212152622087.png)
+
+```
+pip install google-genai
+```
+
+![](./assets/Template/file-20260212152715955.png)
+
+ls:
+![](./assets/Template/file-20260212152744617.png)
+
+![](./assets/Template/file-20260212152829287.png)
+
+one thing done in a kaggle notebook lab was to build agents but having to sepcify the content generations parameters of our llm agent definingin it with the GenerateConetntConfig class parameters from google-genai:
+![](./assets/Template/file-20260212153843444.png)
+
+and in the types.py module, we can see the classes being used alongwith options
+![](./assets/Template/file-20260212153656387.png)
+
 4. **Deactivate the environment:** When you're done working, you can deactivate the environment:
         `deactivate`
 
@@ -1270,6 +1307,19 @@ spec:
               cpu: "1"
       # [END cloud_sql_proxy_k8s_container]
 ```
+## Checklist not strike through
+
+default behavior is to strikethrough an item hat has been completed.
+
+- [x] Item
+- [ ] Item2
+
+like this:
+![](./assets/Template/file-20260212121823784.png)
+this css disables the strikethru behavior.
+
+- [x] now
+- [x] fddfd
 ## Indented Headers
 
 in obsidian, headers for all levels are identically tabulated in the editor. for example see the included screen shot. I would like obsidian to be configured so that Heading 1 (#) headers have no leading spaces, Heading 2 (##) have two spaces in front of the text., H3 3 spaces,... This would make visualizing a table of content such as the one i currently have much easier to read/interpret.

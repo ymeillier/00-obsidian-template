@@ -4,7 +4,8 @@
     "terminal-window",
     "yaml",
     "quiet-outline-highlight",
-    "indented-headers"
+    "indented-headers",
+    "checklist-no-strikethrough"
   ],
   "cssTheme": "GitHub Theme"
 }
