@@ -19,5 +19,7 @@
   "emoji-shortcodes",
   "obsidian-emoji-toolbar",
   "better-export-pdf",
-  "gemini-scribe"
+  "gemini-scribe",
+  "remember-cursor-position",
+  "typewriter-mode"
 ]
