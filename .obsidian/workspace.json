@@ -10,7 +10,7 @@
           {
             "id": "3ae4213bb8875179",
             "type": "tabs",
-            "dimension": 81.7351598173516,
+            "dimension": 53.427561837455826,
             "children": [
               {
                 "id": "bd357c0b82c0756e",
@@ -42,7 +42,7 @@
           {
             "id": "000c30681b775f22",
             "type": "tabs",
-            "dimension": 18.2648401826484,
+            "dimension": 46.572438162544174,
             "children": [
               {
                 "id": "f2a55d3a75744977",
@@ -98,7 +98,7 @@
       {
         "id": "b8952196cfb428d8",
         "type": "tabs",
-        "dimension": 62.67002518891687,
+        "dimension": 62.67002518891688,
         "children": [
           {
             "id": "f5fd6ec8fc56aa0b",
@@ -145,7 +145,7 @@
       {
         "id": "96f831b1ec6e35af",
         "type": "tabs",
-        "dimension": 37.32997481108312,
+        "dimension": 37.329974811083126,
         "children": [
           {
             "id": "889b091c44d4b3b4",
@@ -250,11 +250,15 @@
       "bases:Create new base": false,
       "terminal:Open terminal": false,
       "omnisearch:Omnisearch": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "gemini-scribe:Gemini Scribe: Agent Mode": false
     }
   },
   "active": "f2a55d3a75744977",
   "lastOpenFiles": [
+    "gemini-scribe/Prompts/example-expert.md",
+    "gemini-scribe/Prompts",
+    "gemini-scribe",
     "Template.md",
     "README.md",
     "assets/README/file-20260127081651178.png",

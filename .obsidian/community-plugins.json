@@ -15,9 +15,9 @@
   "obsidian-heading-shifter",
   "obsidian-regex-replace",
   "text-extractor",
-  "obsidian-gemini-assistant",
   "image-captions",
   "emoji-shortcodes",
   "obsidian-emoji-toolbar",
-  "better-export-pdf"
+  "better-export-pdf",
+  "gemini-scribe"
 ]
