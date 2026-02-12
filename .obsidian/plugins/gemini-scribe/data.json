@@ -1,9 +1,9 @@
 {
   "apiKey": "",
-  "chatModelName": "gemini-2.5-pro",
+  "chatModelName": "gemini-3-pro-preview",
   "summaryModelName": "gemini-flash-latest",
   "completionsModelName": "gemini-flash-lite-latest",
-  "imageModelName": "gemini-2.5-flash-image",
+  "imageModelName": "gemini-3-pro-image-preview",
   "summaryFrontmatterKey": "summary",
   "userName": " Yannick",
   "chatHistory": true,
