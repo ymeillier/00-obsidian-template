@@ -15,7 +15,7 @@ Local Repo:
 
 # Themes
 
-![file-20251111150922923](./assets/Template/file-20251111150922923.png)
+![file-20251111150922923](file-20251111150922923.png)
 
 
 
@@ -28,13 +28,13 @@ For example if I was to clone the kubernetes-the-hard-way repo, from
 https://github.com/kelseyhightower/kubernetes-the-hard-way
 ```
 
-![](./assets/README/file-20251031161558455.png)
+![](file-20251031161558455.png)
 
 and would like to review the md files at hte root and within the docs/ folder, 
-![](./assets/README/file-20251031161647806.png)
+![](file-20251031161647806.png)
 
 we would need to open that folder as a vault:
-![](./assets/README/file-20251031161809279.png)
+![](file-20251031161809279.png)
 However, this is just one repo and example. When doing so every time we need to open an md file, we will end up with lots of vaults. 
 
 
@@ -81,24 +81,24 @@ or
 "`obsidian_vaults -s`" for a sorted output:
 
 "`obsidian_vaults`"
-![](./assets/README/file-20251101121111473.png)
+![](file-20251101121111473.png)
 "`obsidian_vaults -s`"
-![](./assets/README/file-20251101121137560.png)
+![](file-20251101121137560.png)
 
 
 
 
 Existing Vaults are listed in the left pane of the Vault switcher: 
-![](./assets/README/file-20251031160555170.png)
+![](file-20251031160555170.png)
 or also from the vault switcher within an already opened Obsidian Vault window:
-![](./assets/README/file-20251031160642770.png)
+![](file-20251031160642770.png)
 
 When vaults are created, Obsidian will assign a unique ID to the Vault and keep track of the existing Vault in its obsidian.json file in 
 ```
 ~/Library/Application Support/obsidian/obsidian.json
 ```
 
-![](./assets/README/file-20251031160754069.png)
+![](file-20251031160754069.png)
 
 We created a first bash function to list the vaults from the CLI (vaults.sh in repo):
 
@@ -140,34 +140,34 @@ There is an associated md_cleanup() function used to delete that vault when edit
 
 For example, using the example of cloning another repo which contains a markdown file i'd like to open in obsidian. Or say i have a new md file that craeted in a tmp folder that i would like to edit with obsidian, but not keep as a vault. 
 
-![](./assets/README/file-20251031162324826.png)
+![](file-20251031162324826.png)
 
 we use the open_md() function to open that directory as vault:
-![](./assets/README/file-20251031162534890.png)
+![](file-20251031162534890.png)
 
 this will open Obsidian:
-![](./assets/README/file-20251031162508252.png)
+![](file-20251031162508252.png)
 we edit hte file in obsidian
-![](./assets/README/file-20251031162632281.png)
+![](file-20251031162632281.png)
 close the window manually, and validate the md file changes were saved:
 
-![](./assets/README/file-20251031162738276.png)
+![](file-20251031162738276.png)
 
 if run md_open() again, we are back to being able to edit the file via Obsidian.
 
 The Vault is available in the Vault switcher:
-![](./assets/README/file-20251031163020416.png)
+![](file-20251031163020416.png)
 
 Now if we run vaults(), we see our new vault with its Vault ID starting with 14 9s:
-![](./assets/README/file-20251031162911847.png)
+![](file-20251031162911847.png)
 ## obsidian_cleanup_pwd()
 This function can be run from a directory that has a .obsidian file to clean up the directory as well as the vault ID from the obsidian.json file.
 
 We now run the md_cleanup() function to cleanup the registration of the folder as a Vault in Obsidian and can validate with the vaults() function that our vault no longer exist. 
-![](./assets/README/file-20251031163214640.png)
+![](file-20251031163214640.png)
 
 Only the OBsidian vault was deleted, the files are intact:
-![](./assets/README/file-20251031163252506.png)
+![](file-20251031163252506.png)
 
 ## obsidian_cleanup_alltmp()
 
@@ -178,14 +178,14 @@ Sometimes you might forget running the cleanup function and over time you might 
 We had those being created with the same identifier starting with 14 9s and the md_cleanup_all() function will clean any vault starting with that ID prefix
 
 For example We are actually currently editing this exact md file that you are reading in Obsidian using such a temporary Vault. 
-![](./assets/README/file-20251031163518761.png)
+![](file-20251031163518761.png)
 
 When we run the md_cleanup_all() function, our obsidian window will close and its vault will be deleted:
-![](./assets/README/file-20251031173254750.png)
+![](file-20251031173254750.png)
 
 
 however we can open our folder as a vault again and resume editing:
-![](./assets/README/file-20251031173343313.png)
+![](file-20251031173343313.png)
 
 
 
@@ -260,7 +260,7 @@ function obsidian_cleanup_id() {
 ```
 
 
-![](./assets/README/file-20251101100650933.png)
+![](file-20251101100650933.png)
 
 ## obsidian()
 
@@ -274,7 +274,7 @@ This one is used when wanting to either:
 2 - Open an existing vault from the cli.
 
 For example, if we navigate to "/Users/meillier/Documents/Obsidian/Google-v2/Google-v2", this is a Vault, we know that because it has the .obsidian directory:
-![](./assets/README/file-20251031173410415.png)
+![](file-20251031173410415.png)
 
 if we just type "obsidian", it will open the vault in another Obsidian window.
 
@@ -284,9 +284,9 @@ We could also create a new Permanent Vault using this same function. The Vault I
 ## misc: open error
 
 If you run into this error:
-![](./assets/README/file-20251031172243728.png)
+![](file-20251031172243728.png)
 
-![](./assets/README/file-20251031172253713.png)
+![](file-20251031172253713.png)
 
 
 
@@ -320,19 +320,19 @@ I keep my template Obsidian vault at
 /Users/meillier/Documents/Obsidian/00-Template
 ```
 
-![](./assets/README/file-20251101110359833.png)
+![](file-20251101110359833.png)
 
 One great benefits of Obsidian is its rich ecosystem of community plugins that extend its functionality.
 
 I have a couple favorites that I always want loaded with my Obsidian Vault: Colored Text, Image Toolkit to zoom on screenshots, Quiet Outline ...
-![](./assets/README/file-20251031173439703.png)
+![](file-20251031173439703.png)
 
 Plugin configurations for a Vault are managed via json files in the .obsidian file:
-![](./assets/README/file-20251031173505250.png)
+![](file-20251031173505250.png)
 
 Each plugin code and optionally configurations are saved as json files within each plugin folder:
 
-![](./assets/README/file-20251031173522050.png)
+![](file-20251031173522050.png)
 
 Each new Vault created will however come up without these plugins since Obsidian leaves it to the user to have its different Vaults configured differently if needed.
 
@@ -340,27 +340,27 @@ We needed a way to ensure that each new Vault created via the utilities we creat
 
 When creating new vaults, our scripts thus copy those configs.
 
-![](./assets/README/file-20251031173546140.png)
+![](file-20251031173546140.png)
 
 For example we create a new directory and md file:
 
 and md_open(). It will ask if we trust the author of the vault:
-![](./assets/README/file-20251031173608144.png)
+![](file-20251031173608144.png)
 
 
 
 and then we can validate that this new vault comes configured with our plugins:
-![](./assets/README/file-20251031173627157.png)
+![](file-20251031173627157.png)
 Note: Plugins are accesses via the settings icon in the bottom left:
-![](./assets/README/file-20251031173646206.png)
+![](file-20251031173646206.png)
 One of hte most important configuration of our Template Vault is how screenshots are saved in our Vault.
 They should be saved in a subfolder under assets/ named after our .md:
 
-![](./assets/README/file-20251031173706641.png)This is set by the Files and Links config:
-![](./assets/README/file-20251031173732712.png)
+![](file-20251031173706641.png)This is set by the Files and Links config:
+![](file-20251031173732712.png)
 
 added to a subdirectory of the folder because it was not configured properly:
-![](./assets/README/file-20251031173745795.png)
+![](file-20251031173745795.png)
 This is what the customer attachment location plugin is for using these configurations for making sure the screenshots are saved an assets folder 
 
 # Emoji shortcode
@@ -493,7 +493,7 @@ If you don't want to create a new file every time, there is a community plugin c
 
 
 ## Regex Find/Replace
-![](./assets/Template/file-20251226154628517.png)
+![](file-20251226154628517.png)
 Was useful when converting word documetn to markdown and having to change the references to images from 
 ```
 <img src="./media/image2.png" style="width:6.5in;height:3.68333in" />
@@ -542,7 +542,7 @@ A powerful search tool that provides more advanced search capabilities, includin
 ## Text Extractor
 Required for Omnisearch OCR 
 
-![](./assets/Template/file-20251226170637844.png)
+![](file-20251226170637844.png)
 
 ## Quiet Outline 
 Offers a cleaner, more customizable outline view of your document's headings.
@@ -560,7 +560,7 @@ to open .json .xml and .txt files in obsidian
 
 # Custom Attachment Location
 Its configurations are set as such to match my intended behavior of storing files in a specific asset folder and subfolder named after the md file
-![](./assets/README/file-20251101110747436.png)
+![](file-20251101110747436.png)
 
 
 
@@ -581,7 +581,7 @@ There is currently **no community plugin** that allows directly creating and run
 
 google created an alias for python adn python3 command aliasing to /usr/bin/python3
 
-![](./assets/Template/file-20260111193117900.png)
+![](file-20260111193117900.png)
 ## 💻 JupyMD Plugin
 
 The **JupyMD** plugin bridges the gap between your Markdown notes and Jupyter Notebooks using a tool called **Jupytext**.
@@ -607,7 +607,7 @@ To use JupyMD, you must have the following installed on your system outside of O
 Out of the box JupyMD is set to use the python interpreter.  The code blocks of the jupyter notebook will call for hte execution of jupyter and we cannot change that to jupyer3.
 
 If we create a virtual environment anyway, which is a best practice, it will have the python interpreter
-![](./assets/Template/file-20251107142214680.png)
+![](file-20251107142214680.png)
 
 
 **Best Practice: Use a Virtual Environment**
@@ -621,15 +621,15 @@ Here's how you can do it:
         `python3 -m venv myvenv  # Replace 'myenv' with your preferred environment name`
 		in corp laptop run the the binary of python3 using the path obtained with `type -a python3`
 
-![](./assets/Template/file-20260212150207278.png)
+![](file-20260212150207278.png)
 
-![](./assets/Template/file-20260212152036245.png)
+![](file-20260212152036245.png)
 
 
 2. **Activate the virtual environment:**
         `source myenv/bin/activate`
 
-![](./assets/Template/file-20260212150258998.png)
+![](file-20260212150258998.png)
 
     Your shell prompt will usually change to indicate the active environment (e.g., `(myenv) meillier@meillier-macbookpro ... %`).
     
@@ -638,35 +638,35 @@ Here's how you can do it:
         `python3 -m pip install notebook`
         ``python3 -m pip install jupytext``
 on the corp mac airlock prevents installation of libraries and requires installing packages from the internal mirror controlled by airlock
-![](./assets/Template/file-20260212151025830.png)
+![](file-20260212151025830.png)
 need to run `gcert`
-![](./assets/Template/file-20260212151117217.png)
+![](file-20260212151117217.png)
 
 after doing so we can installa packages:
-![](./assets/Template/file-20260212151156052.png)
+![](file-20260212151156052.png)
 
 
 the packages are local to virtual environment:
-![](./assets/Template/file-20260212151917067.png)
+![](file-20260212151917067.png)
 
-![](./assets/Template/file-20260212152622087.png)
+![](file-20260212152622087.png)
 
 ```
 pip install google-genai
 ```
 
-![](./assets/Template/file-20260212152715955.png)
+![](file-20260212152715955.png)
 
 ls:
-![](./assets/Template/file-20260212152744617.png)
+![](file-20260212152744617.png)
 
-![](./assets/Template/file-20260212152829287.png)
+![](file-20260212152829287.png)
 
 one thing done in a kaggle notebook lab was to build agents but having to sepcify the content generations parameters of our llm agent definingin it with the GenerateConetntConfig class parameters from google-genai:
-![](./assets/Template/file-20260212153843444.png)
+![](file-20260212153843444.png)
 
 and in the types.py module, we can see the classes being used alongwith options
-![](./assets/Template/file-20260212153656387.png)
+![](file-20260212153656387.png)
 
 4. **Deactivate the environment:** When you're done working, you can deactivate the environment:
         `deactivate`
@@ -692,7 +692,7 @@ The easiest fix is often directly in the Obsidian settings for JupyMD:
     /usr/local/bin/python3
     ```
 
-![](./assets/Template/file-20251107141619854.png)
+![](file-20251107141619854.png)
 where the path is  `/Users/meillier/Documents/Obsidian/00-Template/template/bin/python` and was obtained from activating the venv and runnin which python.
 
 
@@ -728,19 +728,19 @@ pip install ipykernel
 python3 -m ipykernel install --user --name=template_venv --display-name "Template Project VEnv"
 ```
 
-![](./assets/Template/file-20251107130915718.png)
+![](file-20251107130915718.png)
 
 
 ### JupyMD settings
 
-![](./assets/Template/file-20251107141619854.png)
+![](file-20251107141619854.png)
 where the path is  `/Users/meillier/Documents/Obsidian/00-Template/template/bin/python` and was obtained from activating the venv and runnin which python.
 
 
 ### Frontmatter
 you have to activate source mode to see the frontmatter yaml block:
 
-![](./assets/Template/file-20251107142529870.png)
+![](file-20251107142529870.png)
 IT needs to have the jupyterkernel settings:
 
 ```yaml
@@ -749,13 +749,13 @@ IT needs to have the jupyterkernel settings:
       name: template_venv
 ```
 
-![](./assets/Template/file-20251107142559881.png)
+![](file-20251107142559881.png)
 
 ### Create notebook from md
 1. Use the plugin's commands (e.g., `JupyMD: Create Jupyter notebook from note`) to activate the functionality on a specific Markdown note.
 
 Open the Command palette with ⌘+P  and type "JupyMD..". It will display al the commands available to choose from 
-![](./assets/Template/file-20251107143805524.png)
+![](file-20251107143805524.png)
 
 
 ### ✅ Jupyter Notebook Cells
@@ -770,7 +770,7 @@ The **JupyMD plugin** now handles the activation process internally. When you cl
 So you do not need to do any sort of venv activations. 
 
 
-![](./assets/Template/file-20251107124110319.png)
+![](file-20251107124110319.png)
 
 ```python
 import pandas as pd 
@@ -801,7 +801,7 @@ df
 
 ## Troubleshooting
 Execution of code block fails
-![](./assets/Template/file-20251107132733034.png)
+![](file-20251107132733034.png)
 
 Verify virtual environment has the packages installed such as panda
 
@@ -813,7 +813,7 @@ source template/bin/activate
 ```bash
 pip list | grep pandas
 ```
-![](./assets/Template/file-20251107132832526.png)
+![](file-20251107132832526.png)
 
 Verify Kernel registration
 
@@ -822,7 +822,7 @@ Verify Kernel registration
 jupyter kernelspec list
 ```
 
-![](./assets/Template/file-20251107133518050.png)
+![](file-20251107133518050.png)
 
 
 To exit:
@@ -830,7 +830,7 @@ To exit:
 deactivate
 ```
 
-![](./assets/Template/file-20251107133114777.png)
+![](file-20251107133114777.png)
 
 Steps taken resolve execution issues
 Here is the summarized, chronological sequence of steps we took to establish a stable, virtual-environment-backed JupyMD setup:
@@ -850,7 +850,7 @@ This phase isolates your project dependencies and ensures the required tools are
     - Navigate to your project directory (`00-Template`).
         
     - Create the environment: `python3 -m venv template
-	    - ![](./assets/Template/file-20260111192253505.png) On the corporate mac, python is mapped to an alias.  ![](./assets/Template/file-20260111192351503.png)
+	    - ![](file-20260111192253505.png) On the corporate mac, python is mapped to an alias.  ![](file-20260111192351503.png)
 	    - 
 	    - `
         
@@ -970,19 +970,19 @@ jupyter notebook
 ```
 
 A browser window/tab opens with jupyter:
-![](./assets/Template/file-20251107144954610.png)
+![](file-20251107144954610.png)
 
 
 
 open teh ipynb notebook:
-![](./assets/Template/file-20251107145036252.png)
+![](file-20251107145036252.png)
 
-![](./assets/Template/file-20251107145156085.png)
+![](file-20251107145156085.png)
 
 Create a new cell and run:
 
 
-![](./assets/Template/file-20251107145520884.png)
+![](file-20251107145520884.png)
 
 
 but in obsidian via JupyMD:
@@ -1022,7 +1022,7 @@ except subprocess.CalledProcessError as e:
 ```
 
 which when executed returns:
-![](./assets/Template/file-20251107145845247.png)
+![](file-20251107145845247.png)
 #### gcloud wrapper function:
 
 ```python
@@ -1090,7 +1090,7 @@ g("gcloud auth list")
 ```
 
 this will allow running the gcloud command:
-![](./assets/Template/file-20251107151106124.png)
+![](file-20251107151106124.png)
 ### g() and get()
 
 
@@ -1195,7 +1195,7 @@ print(region_name)
 
 
 when executed it gives us the expected behavior of command output (`print(output)`) vs value extraction (`return(output)`):
-![](./assets/Template/file-20251107155838544.png)
+![](file-20251107155838544.png)
 
 
 ## ☁️ Colab Integration (Workaround)
@@ -1315,7 +1315,7 @@ default behavior is to strikethrough an item hat has been completed.
 - [ ] Item2
 
 like this:
-![](./assets/Template/file-20260212121823784.png)
+![](file-20260212121823784.png)
 this css disables the strikethru behavior.
 
 - [x] now
@@ -1342,7 +1342,7 @@ in obsidian, headers for all levels are identically tabulated in the editor. for
 ```
 ## Quiet Outline: Search Result bounding box
 instead of the default underline for search results, 
-![](./assets/Template/file-20260113121102512.png)
+![](file-20260113121102512.png)
 we want an orange bounding box
 ```css
 /* Change the Quiet Outline search underline to an Orange Box */
@@ -1360,7 +1360,7 @@ we want an orange bounding box
 ## Quiet Outline: highlight selection
 when located in the reading/editing pane, we want the header of the section to be highlithed so that it is easily locatable.
 
-![](./assets/Template/file-20260113100326110.png)
+![](file-20260113100326110.png)
 
 
 this is the css snippet to enable that:
@@ -1578,7 +1578,7 @@ spec:
 ```
 
 enable the snippet.
-![](./assets/Template/file-20260105084238863.png)
+![](file-20260105084238863.png)
 
 In your note, use the language tag `terminal` or `bash-terminal`:
   

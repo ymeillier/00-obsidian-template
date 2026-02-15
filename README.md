@@ -119,7 +119,7 @@ https://help.obsidian.md/callouts#Supported+types
 
 # Themes
 
-![file-20251111150922923](./assets/Template/file-20251111150922923.png)
+![file-20251111150922923](file-20251111150922923.png)
 
 
 
@@ -597,7 +597,7 @@ If you don't want to create a new file every time, there is a community plugin c
 
 
 ## Regex Find/Replace
-![](./assets/Template/file-20251226154628517.png)
+![](file-20251226154628517.png)
 Was useful when converting word documetn to markdown and having to change the references to images from 
 ```
 <img src="./media/image2.png" style="width:6.5in;height:3.68333in" />
@@ -646,7 +646,7 @@ A powerful search tool that provides more advanced search capabilities, includin
 ## Text Extractor
 Required for Omnisearch OCR 
 
-![](./assets/Template/file-20251226170637844.png)
+![](file-20251226170637844.png)
 
 ## Quiet Outline 
 Offers a cleaner, more customizable outline view of your document's headings.
@@ -685,7 +685,7 @@ There is currently **no community plugin** that allows directly creating and run
 
 google created an alias for python and python3 command aliasing to /usr/bin/python3
 
-![](./assets/Template/file-20260111193117900.png)
+![](file-20260111193117900.png)
 ## 💻 JupyMD Plugin
 
 The **JupyMD** plugin bridges the gap between your Markdown notes and Jupyter Notebooks using a tool called **Jupytext**.
@@ -711,7 +711,7 @@ To use JupyMD, you must have the following installed on your system outside of O
 Out of the box JupyMD is set to use the python interpreter.  The code blocks of the jupyter notebook will call for the execution of jupyter and we cannot change that to jupyter3.
 
 If we create a virtual environment anyway, which is a best practice, it will have the python interpreter
-![](./assets/Template/file-20251107142214680.png)
+![](file-20251107142214680.png)
 this only worked because previously we created a venv using:  
 ```bash
 
@@ -772,7 +772,7 @@ The easiest fix is often directly in the Obsidian settings for JupyMD:
     /usr/local/bin/python3
     ```
 
-![](./assets/Template/file-20251107141619854.png)
+![](file-20251107141619854.png)
 where the path is  `/Users/meillier/Documents/Obsidian/00-Template/template/bin/python` and was obtained from activating the venv and runnin which python.
 
 
@@ -808,19 +808,19 @@ pip install ipykernel
 python3 -m ipykernel install --user --name=template_venv --display-name "Template Project VEnv"
 ```
 
-![](./assets/Template/file-20251107130915718.png)
+![](file-20251107130915718.png)
 
 
 ### JupyMD settings
 
-![](./assets/Template/file-20251107141619854.png)
+![](file-20251107141619854.png)
 where the path is  `/Users/meillier/Documents/Obsidian/00-Template/template/bin/python` and was obtained from activating the venv and runnin which python.
 
 
 ### Frontmatter
 you have to activate source mode to see the frontmatter yaml block:
 
-![](./assets/Template/file-20251107142529870.png)
+![](file-20251107142529870.png)
 IT needs to have the jupyterkernel settings:
 
 ```yaml
@@ -829,13 +829,13 @@ IT needs to have the jupyterkernel settings:
       name: template_venv
 ```
 
-![](./assets/Template/file-20251107142559881.png)
+![](file-20251107142559881.png)
 
 ### Create notebook from md
 1. Use the plugin's commands (e.g., `JupyMD: Create Jupyter notebook from note`) to activate the functionality on a specific Markdown note.
 
 Open the Command palette with ⌘+P  and type "JupyMD..". It will display al the commands available to choose from 
-![](./assets/Template/file-20251107143805524.png)
+![](file-20251107143805524.png)
 
 
 ### ✅ Jupyter Notebook Cells
@@ -850,7 +850,7 @@ The **JupyMD plugin** now handles the activation process internally. When you cl
 So you do not need to do any sort of venv activations. 
 
 
-![](./assets/Template/file-20251107124110319.png)
+![](file-20251107124110319.png)
 
 ```python
 import pandas as pd 
@@ -881,7 +881,7 @@ df
 
 ## Troubleshooting
 Execution of code block fails
-![](./assets/Template/file-20251107132733034.png)
+![](file-20251107132733034.png)
 
 Verify virtual environment has the packages installed such as panda
 
@@ -893,7 +893,7 @@ source template/bin/activate
 ```bash
 pip list | grep pandas
 ```
-![](./assets/Template/file-20251107132832526.png)
+![](file-20251107132832526.png)
 
 Verify Kernel registration
 
@@ -902,7 +902,7 @@ Verify Kernel registration
 jupyter kernelspec list
 ```
 
-![](./assets/Template/file-20251107133518050.png)
+![](file-20251107133518050.png)
 
 
 To exit:
@@ -910,7 +910,7 @@ To exit:
 deactivate
 ```
 
-![](./assets/Template/file-20251107133114777.png)
+![](file-20251107133114777.png)
 
 Steps taken resolve execution issues
 Here is the summarized, chronological sequence of steps we took to establish a stable, virtual-environment-backed JupyMD setup:
@@ -930,7 +930,7 @@ This phase isolates your project dependencies and ensures the required tools are
     - Navigate to your project directory (`00-Template`).
         
     - Create the environment: `python3 -m venv template
-	    - ![](./assets/Template/file-20260111192253505.png) On the corporate mac, python is mapped to an alias.  ![](./assets/Template/file-20260111192351503.png)
+	    - ![](file-20260111192253505.png) On the corporate mac, python is mapped to an alias.  ![](file-20260111192351503.png)
 	    - 
 	    - `
         
@@ -1050,19 +1050,19 @@ jupyter notebook
 ```
 
 A browser window/tab opens with jupyter:
-![](./assets/Template/file-20251107144954610.png)
+![](file-20251107144954610.png)
 
 
 
 open teh ipynb notebook:
-![](./assets/Template/file-20251107145036252.png)
+![](file-20251107145036252.png)
 
-![](./assets/Template/file-20251107145156085.png)
+![](file-20251107145156085.png)
 
 Create a new cell and run:
 
 
-![](./assets/Template/file-20251107145520884.png)
+![](file-20251107145520884.png)
 
 
 but in obsidian via JupyMD:
@@ -1102,7 +1102,7 @@ except subprocess.CalledProcessError as e:
 ```
 
 which when executed returns:
-![](./assets/Template/file-20251107145845247.png)
+![](file-20251107145845247.png)
 #### gcloud wrapper function:
 
 ```python
@@ -1170,7 +1170,7 @@ g("gcloud auth list")
 ```
 
 this will allow running the gcloud command:
-![](./assets/Template/file-20251107151106124.png)
+![](file-20251107151106124.png)
 ### g() and get()
 
 
@@ -1275,7 +1275,7 @@ print(region_name)
 
 
 when executed it gives us the expected behavior of command output (`print(output)`) vs value extraction (`return(output)`):
-![](./assets/Template/file-20251107155838544.png)
+![](file-20251107155838544.png)
 
 
 ## ☁️ Colab Integration (Workaround)
@@ -1409,7 +1409,7 @@ in obsidian, headers for all levels are identically tabulated in the editor. for
 ```
 ## Quiet Outline: Search Result bounding box
 instead of the default underline for search results, 
-![](./assets/Template/file-20260113121102512.png)
+![](file-20260113121102512.png)
 we want an orange bounding box
 ```css
 /* Change the Quiet Outline search underline to an Orange Box */
@@ -1427,7 +1427,7 @@ we want an orange bounding box
 ## Quiet Outline: highlight selection
 when located in the reading/editing pane, we want the header of the section to be highlithed so that it is easily locatable.
 
-![](./assets/Template/file-20260113100326110.png)
+![](file-20260113100326110.png)
 
 
 this is the css snippet to enable that:
@@ -1645,7 +1645,7 @@ spec:
 ```
 
 enable the snippet.
-![](./assets/Template/file-20260105084238863.png)
+![](file-20260105084238863.png)
 
 In your note, use the language tag `terminal` or `bash-terminal`:
   
