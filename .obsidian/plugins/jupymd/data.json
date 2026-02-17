@@ -1,7 +1,7 @@
 {
   "autoSync": true,
   "bidirectionalSync": false,
-  "pythonInterpreter": "/Users/meillier/Documents/Obsidian/00-Template/template/bin/python",
+  "pythonInterpreter": "/Users/meillier/Documents/Obsidian/00-Template/ipynb-in-obsidian-venv/bin/python",
   "notebookEditorCommand": "jupyter-lab",
   "enableCodeBlocks": true
 }

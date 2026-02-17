@@ -22,6 +22,14 @@ created script for xmind files. (????)
 
 # Markdown Syntax Refreshers
 
+## control width of linked image
+
+`|<width>` in the square brackets:
+```
+![|<width>]
+```
+
+![](./assets/README/file-20260215205452326.png)
 ## xmind via Xmind Linker
 
 To show the view of a mindmap created with xmind in our markdown note.
@@ -116,12 +124,129 @@ https://help.obsidian.md/callouts#Supported+types
 ### Quote
 ![](./assets/README/file-20260126101713216.png)
 
+# Emoji shortcode
+So that obsidian can interpreted the github style emoji codes like `:classical_building:` rendering to the actual icon 🏛️
+
+# Translucion: Aggregating Notes/.md
+
+---
+
+## 🔗 Using Transclusion (Embedding)
+
+Transclusion is the most direct and dynamic way to achieve this. It pulls the content of one note (or a section of a note) and displays it directly inside another note.
+
+### **How to Embed a Full Note**
+
+1. Create a **new markdown file** (e.g., `Aggregate View.md`). This will be your master file.
+    
+2. In this new file, use the following syntax for each note you want to include:
+    
+    Markdown
+    
+    ```
+    ![[Name of the other note]]
+    ```
+    
+    - The `!` at the beginning is what turns a regular link (`[[Note Name]]`) into an **embed**.
+        
+    - **Obsidian will automatically show you suggestions** as you type the file name.
+        
+3. When you switch your `Aggregate View.md` note to **Reading View**, the content of the linked notes will be displayed inline. If you edit the original source note, the content in the `Aggregate View` updates automatically.
+    
+
+**Example:**
+
+If you have notes named `Chapter 1.md`, `Chapter 2.md`, and `Chapter 3.md`, your `Aggregate View.md` would look like this in **Editing View**:
+
+Markdown
+
+```
+# My Complete Document
+
+![[Chapter 1]]
+
+---
+
+## Part II
+
+![[Chapter 2]]
+
+![[Chapter 3]]
+```
+
+When you view this in **Reading View**, you will see the actual content of all three files, appearing as one continuous document.
+
+---
+
+### **Embedding Specific Sections (Headings or Blocks)**
+
+You can also embed only a specific part of a note, which is great for combining relevant pieces without pulling in the entire source file.
+
+|**Target**|**Syntax**|
+|---|---|
+|**Specific Heading**|`![[Note Name#Heading Name]]`|
+|**Specific Block**|`![[Note Name#^block-id]]`|
+
+- To embed a heading, type the note name, then a hash sign (`#`), and then the heading name (Obsidian will suggest them).
+    
+- To embed a **block** (like a paragraph, list, or code block), you need to give the block a unique identifier by typing `^block-id` at the end of the paragraph/list item in the source note. Then, use the syntax `![[Note Name#^block-id]]` in your aggregate note.
+    
+
+---
+
+## 🛠️ Using Community Plugins
+
+While transclusion is the standard way, community plugins offer more advanced ways to aggregate content, especially if you need to dynamically search and collect content based on criteria (like tags or folders).
+
+### **The Dataview Plugin**
+
+The **Dataview** community plugin is extremely popular for creating dynamic content lists and aggregation.
+
+It allows you to use queries to search your vault and display data—or even the _text_—from matching notes.
+
+**Example: Displaying content from all files in a folder**
+
+You can use DataviewJS to query and embed content from all notes in a specific folder.
+
+Code snippet
+
+```
+let pages = dv.pages('"Your Folder Name"')
+for (let p of pages) {
+    dv.header(2, p.file.name)
+    dv.paragraph(p.file.outlinks.filter(l => l.path.includes("important topic")).text) // This is a simplified example
+    dv.el("br", "")
+}
+```
+
+- **Note:** The Dataview approach typically requires some basic coding/query language, and the complexity depends on _what_ content you want to aggregate and how you want to display it.
+    
+
+### **Notes Merger Plugin (for Static Aggregation)**
+
+A plugin like **Notes Merger** is designed to take multiple notes and physically **merge** them into a single, permanent markdown file. This is useful if you want a static, non-updating copy of the combined content, but it's less common than dynamic transclusion.
+
+- This creates a new, independent file; changes to the source notes **will not** update the merged note.
+    
+
+The built-in **Transclusion** feature is likely the best solution for the "one view" requirement, as it's dynamic and requires no extra plugins.
+## Glow
+
+Glow is a clin based markdown reader that can be used as an alternative to Obsidian when you need simpler and quicker tools for reviewing and potentially editing the markdown.
+
+
+[https://github.com/charmbracelet/glow](https://github.com/charmbracelet/glow)
+
+
+
+
 
 # Themes
 
 ![file-20251111150922923](file-20251111150922923.png)
 
 
+#
 
 # Scripts
 
@@ -416,8 +541,8 @@ see [https://github.com/ymeillier/00-zshrc](https://github.com/ymeillier/00-zshr
 
 
 
-
-# Plugins
+#
+# Obsidian Plugins
 
 I keep my template Obsidian vault at 
 ```
@@ -466,122 +591,6 @@ They should be saved in a subfolder under assets/ named after our .md:
 added to a subdirectory of the folder because it was not configured properly:
 ![](./assets/README/file-20251031173745795.png)
 This is what the customer attachment location plugin is for using these configurations for making sure the screenshots are saved an assets folder 
-
-# Emoji shortcode
-So that obsidian can interpreted the github style emoji codes like `:classical_building:` rendering to the actual icon 🏛️
-
-# Translucion: Aggregating Notes/.md
-
----
-
-## 🔗 Using Transclusion (Embedding)
-
-Transclusion is the most direct and dynamic way to achieve this. It pulls the content of one note (or a section of a note) and displays it directly inside another note.
-
-### **How to Embed a Full Note**
-
-1. Create a **new markdown file** (e.g., `Aggregate View.md`). This will be your master file.
-    
-2. In this new file, use the following syntax for each note you want to include:
-    
-    Markdown
-    
-    ```
-    ![[Name of the other note]]
-    ```
-    
-    - The `!` at the beginning is what turns a regular link (`[[Note Name]]`) into an **embed**.
-        
-    - **Obsidian will automatically show you suggestions** as you type the file name.
-        
-3. When you switch your `Aggregate View.md` note to **Reading View**, the content of the linked notes will be displayed inline. If you edit the original source note, the content in the `Aggregate View` updates automatically.
-    
-
-**Example:**
-
-If you have notes named `Chapter 1.md`, `Chapter 2.md`, and `Chapter 3.md`, your `Aggregate View.md` would look like this in **Editing View**:
-
-Markdown
-
-```
-# My Complete Document
-
-![[Chapter 1]]
-
----
-
-## Part II
-
-![[Chapter 2]]
-
-![[Chapter 3]]
-```
-
-When you view this in **Reading View**, you will see the actual content of all three files, appearing as one continuous document.
-
----
-
-### **Embedding Specific Sections (Headings or Blocks)**
-
-You can also embed only a specific part of a note, which is great for combining relevant pieces without pulling in the entire source file.
-
-|**Target**|**Syntax**|
-|---|---|
-|**Specific Heading**|`![[Note Name#Heading Name]]`|
-|**Specific Block**|`![[Note Name#^block-id]]`|
-
-- To embed a heading, type the note name, then a hash sign (`#`), and then the heading name (Obsidian will suggest them).
-    
-- To embed a **block** (like a paragraph, list, or code block), you need to give the block a unique identifier by typing `^block-id` at the end of the paragraph/list item in the source note. Then, use the syntax `![[Note Name#^block-id]]` in your aggregate note.
-    
-
----
-
-## 🛠️ Using Community Plugins
-
-While transclusion is the standard way, community plugins offer more advanced ways to aggregate content, especially if you need to dynamically search and collect content based on criteria (like tags or folders).
-
-### **The Dataview Plugin**
-
-The **Dataview** community plugin is extremely popular for creating dynamic content lists and aggregation.
-
-It allows you to use queries to search your vault and display data—or even the _text_—from matching notes.
-
-**Example: Displaying content from all files in a folder**
-
-You can use DataviewJS to query and embed content from all notes in a specific folder.
-
-Code snippet
-
-```
-let pages = dv.pages('"Your Folder Name"')
-for (let p of pages) {
-    dv.header(2, p.file.name)
-    dv.paragraph(p.file.outlinks.filter(l => l.path.includes("important topic")).text) // This is a simplified example
-    dv.el("br", "")
-}
-```
-
-- **Note:** The Dataview approach typically requires some basic coding/query language, and the complexity depends on _what_ content you want to aggregate and how you want to display it.
-    
-
-### **Notes Merger Plugin (for Static Aggregation)**
-
-A plugin like **Notes Merger** is designed to take multiple notes and physically **merge** them into a single, permanent markdown file. This is useful if you want a static, non-updating copy of the combined content, but it's less common than dynamic transclusion.
-
-- This creates a new, independent file; changes to the source notes **will not** update the merged note.
-    
-
-The built-in **Transclusion** feature is likely the best solution for the "one view" requirement, as it's dynamic and requires no extra plugins.
-## Glow
-
-Glow is a clin based markdown reader that can be used as an alternative to Obsidian when you need simpler and quicker tools for reviewing and potentially editing the markdown.
-
-
-[https://github.com/charmbracelet/glow](https://github.com/charmbracelet/glow)
-
-
-
 
 # Plugins List
 
@@ -662,20 +671,257 @@ Embeds a command-line terminal directly into Obsidian, allowing you to run shell
 to open .json .xml and .txt files in obsidian
 
 
-# Custom Attachment Location
+## Custom Attachment Location
 Its configurations are set as such to match my intended behavior of storing files in a specific asset folder and subfolder named after the md file
 ![](./assets/README/file-20251101110747436.png)
 
 
 
-# Code Emitter
+## Code Emitter
 
 ```Python
 !gcloud auth list
 ```
 
+#
 
-# Jupyter/Colab from Obsidian
+
+# ipynb: End-to-End Example
+
+### venv creation
+
+```
+#Identify python3 binary
+type -a python3
+```
+
+```
+# Create Virtual Environment
+/usr/local/bin/python3 -m venv ipynb-in-obsidian-venv
+```
+
+### Activate
+```
+source ipynb-in-obsidian-venv/bin/activate
+```
+
+### Requirement for JupyMD
+
+    `pip install notebook`
+    `pip install jupytext`
+    `pip install matplotlib`
+    
+or simply
+	`pip install notebook jupytext matplotlib`
+
+> [!important]+ you might have to run `gcert` first for google to not block the download from our corporate mirror.
+
+We can check to see which version of packages are already installed with `pip show <package>`
+
+![](./assets/README/file-20260215191949379.png)
+...
+
+![](./assets/README/file-20260215191927170.png)
+
+and because we have not installed it yet:
+![](./assets/README/file-20260215192041102.png)
+
+
+![](./assets/README/file-20260215193132338.png)
+
+### path to python interpreter
+```
+/Users/meillier/Documents/Obsidian/00-Template/ipynb-in-obsidian-venv/bin/python
+```
+to JupyMD
+![](./assets/README/file-20260215193222488.png)
+
+
+
+
+![](./assets/README/file-20260215193337690.png)
+
+Afterwards, restart Obsidian. Once loaded, go back to the JupyMD settings, and click on the "Install Libraries" button. This will install Jupytext and Matplotlib to your specified Python interpreter.
+![](./assets/README/file-20260215193627031.png)
+but we already did that manually.
+
+
+
+
+
+
+###  Jupyter Kernel: Register the Environment as a Jupyter Kernel (Crucial Step)
+```bash
+pip install ipykernel
+python3 -m ipykernel install --user --name=ipynb-in-obsidian-venv --display-name "vEnv"
+```
+
+![](./assets/README/file-20260215210528525.png)
+
+
+### Download an ipynb
+
+we will use this one: https://www.kaggle.com/code/kaggle5daysofai/day-1b-agent-architectures
+from
+https://www.kaggle.com/learn-guide/5-day-agents
+
+![](./assets/README/file-20260215204353638.png)
+
+
+![|400](./assets/README/file-20260215204425086.png)
+
+
+### Convert a Jupyter notebook to a note(to have an .md to view)
+
+Move your Jupyter notebook to your vault. 
+
+> [!tip] Edit in vscode and let sync to md equivalent for review in obsidian
+> JupyMD's primary strength is its **bidirectional sync** between your `.md` note and a linked `.ipynb` file.
+> 
+> - **Workaround:** Open the linked `.ipynb` file in **VS Code** or **JupyterLab**.
+>     
+> - Run your `%pip` or magic commands there.
+>     
+> - Save the notebook. JupyMD will then sync those outputs back into your Obsidian note automatically.
+>     
+> 
+---
+
+
+Executing the following command will list out all `.ipynb` files within your vault which you can select to convert into a note:
+
+> `JupyMD: Create note from Jupyter notebook`
+
+This will create a Markdown note (`.md`) with the same file name as the notebook in the same directory where the Jupyter notebook is.
+
+![](./assets/README/file-20260215210617734.png)
+
+> [!important] Make sure you restarted obsidian after setting up JupyMD
+> 
+
+the .md is created with a frontmatter block:
+![](./assets/README/file-20260215211227730.png)
+in source mode:
+![](./assets/README/file-20260215211318399.png)
+
+make sure the kernel spec matche sthe venv we created:
+```
+kernelspec:
+    display_name: vEnv
+    language: python
+    name: ipynb-in-obsidian-venv
+```
+
+
+
+
+##  ipynb in vscode
+running ipynb in obsidian markdown does not quite work because magic commands won't work.
+It is best to run the notebook in vscode instead. IT will allow us to make edit to the ipynb as we see fit.
+
+
+You need to install the following two extensions from the VS Code Marketplace:
+
+- **Python Extension:** Provides the core language support, IntelliSense, and debugging.
+- **Jupyter Extension:** Enables the Notebook interface, allowing you to create, edit, and run Jupyter Notebooks natively.
+
+
+Since you have already set up a virtual environment for your Obsidian vault, you don't need to create a new one. You just need to point VS Code to it:
+1. **Open your Vault folder** in VS Code.
+2. **Select the Interpreter:** Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) to open the Command Palette and search for **"Python: Select Interpreter"**.
+3. **Find your venv:** Choose your `ipynb-in-obsidian-venv` from the list. If it doesn't appear, select "Enter interpreter path..." and browse to `/Users/meillier/Documents/Obsidian/00-Template/ipynb-in-obsidian-venv/bin/python`.
+4. **Select the Kernel:** Open your `.ipynb` file. In the top right corner of the editor, click **"Select Kernel"**. Choose **"Python Environments"** and then select your specific virtual environment.
+
+
+
+### python extension
+![](./assets/Template/file-20260216101706091.png)
+
+
+### `Python: Select Interpreter`
+CMD+Shift+P for the command palette
+
+![](./assets/Template/file-20260216102408294.png)
+
+
+![](./assets/Template/file-20260216102457592.png)
+
+### Select Kernel:
+pen your `.ipynb` file. In the top right corner of the editor, click **"Select Kernel"**. Choose **"Python Environments"** and then select your specific virtual environment.
+
+![](./assets/Template/file-20260216102522549.png)
+
+
+![](./assets/Template/file-20260216102535607.png)
+
+![](./assets/Template/file-20260216102559077.png)
+### Magic command in vscode work
+![](./assets/Template/file-20260216102652674.png)
+
+
+## Magic commands in obsidian (% or !)
+
+![](./assets/README/file-20260216100414072.png)
+
+
+JupyMD’s current execution environment is a "pure" Python interpreter rather than a full IPython interactive kernel. While standard Jupyter Notebooks support "magics" like `%pip` or `!pip`, a standard Python script will throw a `SyntaxError` because those symbols are not valid Python syntax.
+
+Since your setup is currently rejecting shell magics, you should use the standard Python way to call `pip` from within a script.
+
+To install packages directly from a code cell when magics aren't working, use this Python-native snippet:
+
+```
+import sys
+import subprocess
+
+subprocess.check_call([sys.executable, "-m", "pip", "install", "google-adk"])
+```
+
+Even though you updated your frontmatter, JupyMD might still be treating the code block as a standard `.py` execution rather than an interactive Jupyter session. This happens for a few reasons:
+
+- **Plugin Limitation:** Some Obsidian plugins use a simplified Python runner that doesn't include the IPython shell wrapper required for magics.
+- **Kernel Connectivity:** If the plugin isn't successfully "handshaking" with the `ipykernel` you created, it falls back to the basic Python binary path you provided in the settings.
+
+
+for an `ls`:
+```
+import subprocess
+
+# 'ls -lah' provides a detailed list in human-readable format
+result = subprocess.run(['ls', '-lah'], capture_output=True, text=True)
+
+print(result.stdout)
+```
+
+and for an `echo`:
+```
+import subprocess
+
+result = subprocess.run(['echo', 'Hello from the system shell!'], capture_output=True, text=True)
+
+print(result.stdout)
+```
+
+
+we can validate which python executable is being used:
+```
+import sys
+print(sys.executable)
+```
+
+![](./assets/README/file-20260216100827804.png)
+
+
+## gcert
+
+Make sure to run `gcert` if you python code will execute pip install commands. 
+
+
+
+
+# (Jupyter/Colab from Obsidian)
+see [[#ipynb End-to-End Example]] instead. But details of theory here
+
 There is a popular **Obsidian community plugin** called **JupyMD** that allows you to create, run, and sync **Jupyter Notebook** functionality within your Obsidian notes.
 
 There is currently **no community plugin** that allows directly creating and running a **Colab notebook** from within Obsidian, as this would require a specific integration with the Google Colaboratory service.
@@ -701,12 +947,22 @@ The **JupyMD** plugin bridges the gap between your Markdown notes and Jupyter No
 - **Persistent Environment:** Variables and imports defined in one code block are maintained and available to subsequent code blocks within the same note, just like in a standard Jupyter session.
 
 
+
+
+## Getting started
+
+Download the plugin through the [Obsidian community plugin browser](obsidian://show-plugin?id=jupymd) and enable it.
+
 ### Prerequisites
 
 To use JupyMD, you must have the following installed on your system outside of Obsidian:
-1. **Python**
-2. **Jupyter Notebook**
-3. **Jupytext**
+- [Python](https://www.python.org/downloads/)
+- [Jupyter Notebook](https://jupyter.org/install)  
+    `pip install notebook`
+- [Jupytext](https://github.com/mwouts/jupytext)  
+    `pip install jupytext`
+- [Matplotlib](https://matplotlib.org/)  
+    `pip install matplotlib`
 
 Out of the box JupyMD is set to use the python interpreter.  The code blocks of the jupyter notebook will call for the execution of jupyter and we cannot change that to jupyter3.
 
@@ -754,6 +1010,29 @@ This approach prevents conflicts between project dependencies and keeps your glo
 > find ~ -name "pyvenv.cfg"
 > 
 > ```
+
+
+### Setup
+
+The default settings assume Python is in your system's `PATH`. It is highly recommended to set the interpreter to a [virtual environment](https://docs.python.org/3/library/venv.html) instead.
+
+In a directory where you want your virtual environment to be stored in:
+
+```bash
+python -m venv <venv>
+```
+
+To use the virtual environment within JupyMD, go to the plugin settings, and insert your venv interpreter location:
+
+```bash
+/<venv>/bin/python # for Linux/MacOS
+\<venv>\Scripts\python.exe # for Windows
+```
+
+Afterwards, restart Obsidian. Once loaded, go back to the JupyMD settings, and click on the "Install Libraries" button. This will install Jupytext and Matplotlib to your specified Python interpreter.
+
+
+
 ### 🛠️ JupyMD Settings
 
 You need to tell the JupyMD plugin, or its underlying engine, to use the correct executable path: **`/usr/local/bin/python3`**.
