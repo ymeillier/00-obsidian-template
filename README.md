@@ -2186,3 +2186,131 @@ For this CSS to correctly override the line length, the built-in Obsidian settin
 With this CSS snippet, the width of your editing area will now automatically adjust as you resize the Obsidian window or the note pane, based on the percentage you set (e.g., `95%`).
 
 
+
+
+bash script added to `~/.zshrc` to  launch Microsoft Visual studio code with my chosen set of extensions loaded & activated.
+
+Script `vscode` is executed just like one would execute `code .` but with `vscode .`. The script will then copy the configurations from my reference vscode workspace `/Users/meillier/Documents/06-vscode/00-Template` `.vscode` folder which contains the `extensions.json` specifying the extension to load.
+
+#
+# vscode template
+
+## zshrc script:
+(to be sourced)
+```bash
+#!/bin/bash
+
+# Custom function to launch VS Code with a template configuration
+vscode() {
+  # --- CUSTOMIZE THIS PATH ---
+  # Define the path to your template .vscode folder
+  #TEMPLATE_DIR="/Users/meillier/Documents/06-vscode/00-Template/.vscode"
+  TEMPLATE_DIR="/Users/meillier/Documents/Obsidian/00-Template/.vscode"
+  # Define the target directory inside the current project
+  TARGET_DIR=".vscode"
+
+  # Check if the template directory exists
+  if [ ! -d "$TEMPLATE_DIR" ]; then
+    echo "Error: Template directory not found at $TEMPLATE_DIR"
+    echo "Please create the template directory and files first."
+    return 1
+  fi
+
+  # Check if the .vscode directory already exists in the current location
+  if [ -d "$TARGET_DIR" ]; then
+    echo "Warning: .vscode directory already exists in the current project."
+  else
+    # Copy the entire template .vscode directory to the current project
+    cp -r "$TEMPLATE_DIR" "$TARGET_DIR"
+    echo "Copied VS Code template configuration to: $PWD/$TARGET_DIR"
+  fi
+
+  # Launch VS Code in the current directory
+  code .
+}
+```
+
+
+
+
+## .vscode/extensions
+
+```json
+{
+  "recommendations": [
+    "googlecloudtools.cloudcode",
+    "google.geminicodeassist",
+    "google.colab",
+    "hashicorp.terraform",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "pentium10.vscode-gcp-project-switcher",
+    "bitcloudsolutions.vscode-gcp-iap-ssh",
+    "ms-azuretools.vscode-containers",
+    "willasm.obsidian-md-vsc",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig"
+  ]
+}
+```
+
+If extensions were added, update the above with the extension ID obained from `~/.vscode/extensions/extensions.json` read with:
+```bash
+cat ~/.vscode/extensions/extensions.json | \
+jq -r '.[] | "\(.identifier.id) (\(.metadata.publisherDisplayName))"' | \
+sort | uniq
+```
+
+## .vscode/settings.json
+
+```json
+{
+    "workbench.iconTheme": "eq-material-theme-icons",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "geminicodeassist.project": "",
+    "cloudcode.project": "ai-prototyping-460721",
+    "workbench.startupEditor": "none",
+    "redhat.telemetry.enabled": false,
+    "containerlab.sudoEnabledByDefault": true,
+    "hediet.vscode-drawio.resizeImages": null,
+    "obsidian-md-vsc.defaultVault": "Android-app",
+    "obsidian-md-vsc.defaultVaultPath": "/Users/meillier/Documents/Android-app",
+    "obsidian-md-vsc.defaultNote": "deployment_summary",
+    "diffEditor.maxComputationTime": 0,
+    "editor.largeFileOptimizations": false,
+    "editor.comments.ignoreEmptyLines": false,
+    "geminicodeassist.displayInlineContextHint": false,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "explorer.confirmDragAndDrop": false
+}
+```
+If settings are changed via the GUI, update the above settings.json with the new settings from:
+```
+/Users/meillier/Library/Application\ Support/Code/User/settings.json
+```
+
+
+## vscode extension: gemini cli companion
+![](./assets/README/file-20260215110842859.png)
+
+![](./assets/README/file-20260215111001548.png)
+
+![](./assets/README/file-20260215111112931.png)
+
+
+![](./assets/README/file-20260215111127311.png)
+
+
+Move to secondary side pane 
+
+![](./assets/README/file-20260215111518514.png)
+
+![](./assets/README/file-20260215111424896.png)
+
+## vscode extension: claude code
+![](./assets/README/file-20260215111630980.png)
+
+
