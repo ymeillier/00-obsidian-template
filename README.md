@@ -594,6 +594,11 @@ This is what the customer attachment location plugin is for using these configur
 
 # Plugins List
 
+## Customizable Page Header and Context Menu
+![](./assets/README/file-20260403094852970.png)
+
+## Text Format
+
 ## Better Export PDF:
 
 If you don't want to create a new file every time, there is a community plugin called **"Better Export PDF"**.
@@ -1566,6 +1571,7 @@ Since there's no direct Colab plugin, the common workaround for linking to Googl
 - **iFrame (Limited):** Some users have explored using an `<iframe>` in Obsidian to embed a preview of a public notebook (often via services like Binder or simply the Colab share link). However, this method is usually limited to **viewing** and does **not** allow for running or editing the code interactively within Obsidian.
 
 #
+
 # Custom CSS Configurations
 text
 yaml
@@ -1665,6 +1671,27 @@ spec:
               # application's requirements.
               cpu: "1"
       # [END cloud_sql_proxy_k8s_container]
+```
+## Code block scroll bar 
+for adding a scroll bar in the code block instead of wrapping the line when the line is too long.
+
+only activated for yaml and bash code block using `yaml-scroll` or `bash-scroll`
+
+This will only provided scrolling in the rendered view.
+
+`code-block-scroll.css`
+```
+/* --- Editor / Live Preview View --- */
+.markdown-source-view.mod-cm6 .cm-content > .cm-line:has(.cm-hmd-codeblock-label:is([class*="yaml-scroll"], [class*="bash-scroll"])) ~ .cm-codeblock-line {
+  white-space: pre !important;
+}
+
+/* --- Reading View --- */
+.markdown-rendered pre[class*="language-yaml-scroll"] code,
+.markdown-rendered pre[class*="language-bash-scroll"] code {
+  white-space: pre !important;
+  overflow-x: auto !important;
+}
 ```
 ## Indented Headers
 

@@ -21,5 +21,7 @@
   "better-export-pdf",
   "gemini-scribe",
   "remember-cursor-position",
-  "typewriter-mode"
+  "typewriter-mode",
+  "obsidian-text-format",
+  "vscode-editor"
 ]
