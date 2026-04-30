@@ -10,7 +10,7 @@
           {
             "id": "3ae4213bb8875179",
             "type": "tabs",
-            "dimension": 25.908667287977632,
+            "dimension": 58.22695035460993,
             "children": [
               {
                 "id": "bd357c0b82c0756e",
@@ -42,7 +42,7 @@
           {
             "id": "3e4210934d7443de",
             "type": "tabs",
-            "dimension": 74.09133271202236,
+            "dimension": 41.77304964539007,
             "children": [
               {
                 "id": "7f5b4faf26c7bab8",
@@ -81,7 +81,7 @@
                   },
                   "pinned": true,
                   "icon": "terminal",
-                  "title": "Terminal: ✋  Action Required (00-Template)"
+                  "title": "Terminal: zsh"
                 }
               }
             ]

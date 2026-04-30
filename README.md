@@ -2341,3 +2341,11 @@ Move to secondary side pane
 ![](./assets/README/file-20260215111630980.png)
 
 
+
+# iterm2 features
+
+## shell integration
+https://iterm2.com/documentation-shell-integration.html
+
+
+activate with command option /
