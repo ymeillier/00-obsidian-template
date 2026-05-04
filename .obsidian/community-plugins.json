@@ -23,5 +23,6 @@
   "remember-cursor-position",
   "typewriter-mode",
   "obsidian-text-format",
-  "vscode-editor"
+  "vscode-editor",
+  "obsidian-paste-to-current-indentation"
 ]

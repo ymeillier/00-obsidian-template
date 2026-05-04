@@ -18,12 +18,12 @@
                 "state": {
                   "type": "quiet-outline",
                   "state": {},
-                  "icon": "lucide-ghost",
-                  "title": "quiet-outline"
+                  "icon": "lines-of-text",
+                  "title": "Quiet Outline"
                 }
               },
               {
-                "id": "ab9d9994b5f55977",
+                "id": "891bcf58793a4762",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
